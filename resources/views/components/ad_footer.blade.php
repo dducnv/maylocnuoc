@@ -4,4 +4,4 @@
                 <p class="mb-0 text-center text-lg-start">© 2021-<span class="current-year"></span> | <a class="text-primary fw-normal" href="" target="_blank">Made by Nguyen Van Duc</a></p>
             </div>
         </div>
-    </footer>
+</footer>

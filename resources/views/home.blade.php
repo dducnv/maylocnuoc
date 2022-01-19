@@ -1,6 +1,5 @@
 @extends('layout')
 @section('main')
-
     <div class="slider-area pb-60">
         <div class="container">
             <div class="row">
