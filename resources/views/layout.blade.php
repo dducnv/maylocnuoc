@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
  {{-- head --}}
-
  <x-head></x-head>
     <body>
         <div class="main-wrapper">
