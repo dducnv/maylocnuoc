@@ -1,0 +1,16 @@
+<script src="{{asset('assets/frontend/js/jquery-1.11.2.min.js')}}"></script>
+<script src="{{asset('assets/vendor/bootstrap-5/js/bootstrap.min.js')}}"></script>
+<script src="{{asset('assets/vendor/slick/slick.min.js')}}"></script>
+<script src="{{asset('assets/frontend/js/fancybox/fancybox.js')}}"></script>
+<script src="{{asset('assets/frontend/js/fancybox/helpers/jquery.fancybox-thumbs.js')}}"></script>
+<script src="{{asset('assets/frontend/js/jquery.flexslider-min.js')}}"></script>
+<script src="{{asset('assets/frontend/js/swiper.jquery.min.js')}}"></script>
+<script src="{{asset('assets/frontend/js/jquery.waypoints.min.js')}}"></script>
+<script src="{{asset('assets/frontend/js/progressbar.min.js')}}"></script>
+<script src="{{asset('assets/frontend/js/ion.rangeSlider.min.js')}}"></script>
+<script src="{{asset('assets/frontend/js/chosen.jquery.min.js')}}"></script>
+<script src="{{asset('assets/frontend/js/jQuery.Brazzers-Carousel.js')}}"></script>
+<script src="{{asset('assets/frontend/js/plugins.js')}}"></script>
+<script src="{{asset('assets/frontend/js/main.js')}}"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDhAYvx0GmLyN5hlf6Uv_e9pPvUT3YpozE"></script>
+<script src="{{asset('assets/frontend/js/gmap.js')}}"></script>
