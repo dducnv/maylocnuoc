@@ -36,6 +36,7 @@ mix.styles([
     'public/assets/frontend/css/style.css'
 ],'public/assets/frontend/css/app.css').version();
 mix.scripts([
+    'public/assets/frontend/alertify/alertify.min.js',
     'public/assets/frontend/js/main.js',
     'public/assets/frontend/js/ajax.js'
 ],'public/assets/frontend/js/script.js').version();
