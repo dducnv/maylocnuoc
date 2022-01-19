@@ -23,7 +23,6 @@ if (!function_exists('showCategories')) {
 if (!function_exists('showCategoriesSearch')) {
     function showCategoriesSearch($categories, $parent_id = 0, $char = '', $selected = 0)
     {
-
         foreach ($categories as $key => $item) {
             // Nếu là chuyên mục con thì hiển thị
             if ($item->parent_id == $parent_id) {
