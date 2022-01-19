@@ -47,9 +47,17 @@
                 <span class="sidebar-icon">
                     <i class="fas icon icon-xs me-2 fa-user-cog"></i>
                 </span>
-                <span class="sidebar-text">Tài Khoản</span>
+                <span class="sidebar-text">Tài Khoản Của Tôi</span>
                 </a>
             </li>
+                <li class="nav-item ">
+                    <a href="{{asset('/admin/account-manager')}}" class="nav-link">
+                <span class="sidebar-icon">
+                    <i class="fas icon icon-xs me-2 fa-users-cog"></i>
+                </span>
+                        <span class="sidebar-text">Tài Khoản Hệ Thông</span>
+                    </a>
+                </li>
             <li class="nav-item ">
                 <a id="file-manager" class="nav-link">
                 <span class="sidebar-icon">
