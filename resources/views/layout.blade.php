@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
  {{-- head --}}
- <x-seo_meta></x-seo_meta>
+
  <x-head></x-head>
     <body>
         <div class="main-wrapper">
