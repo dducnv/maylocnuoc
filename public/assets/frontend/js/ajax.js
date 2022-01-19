@@ -10,9 +10,11 @@ function addToCart(id) {
         // alert(response)
         $('#cart-item').empty();
         $('#cart_qty').empty();
+        $('#qty-cart-mobile').empty();
         $('#cart_page').empty();
         $('#cart-item').html(response.cart_head);
         $('#cart_qty').html(response.cart_qty);
+        $('#qty-cart-mobile').html(response.cart_qty);
         $('#cart_page').html(response.cart_page);
         $('#qty-' + id).val(1);
         alertify.success('Thêm Giỏ Hàng Thành Công');
