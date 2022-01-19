@@ -106,8 +106,9 @@
             <div class="row align-items-center">
                 <div class="col-5">
                     <div class="mobile-logo">
-                        <a href="index.html">
-                            <img alt="" src="assets/images/logo/logo.png">
+                        <a href="{{asset('/')}}">
+{{--                            <img alt="" src="assets/images/logo/logo.png">--}}
+                            <h4>HABECO</h4>
                         </a>
                     </div>
                 </div>
