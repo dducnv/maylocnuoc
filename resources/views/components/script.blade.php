@@ -3,6 +3,7 @@
 <script src="{{asset('assets/frontend/js/vendor/jquery-migrate-v3.3.2.min.js')}}"></script>
 <script src="{{asset('assets/frontend/js/vendor/popper.min.js')}}"></script>
 <script src="{{asset('assets/frontend/js/vendor/bootstrap.min.js')}}"></script>
+<script src="{{asset('assets/frontend/js/vendor/bootstrap.bundle.min.js')}}"></script>
 <script src="{{asset('assets/frontend/js/plugins/slick.js')}}"></script>
 <script src="{{asset('assets/frontend/js/plugins/jquery.syotimer.min.js')}}"></script>
 <script src="{{asset('assets/frontend/js/plugins/jquery.instagramfeed.min.js')}}"></script>
