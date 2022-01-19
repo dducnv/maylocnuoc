@@ -16,8 +16,9 @@ class CreateTableOrder extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('cus_id');
-            $table->unsignedInteger('order_status');
+            $table->unsignedInteger('order_status')->default(1);
             $table->unsignedInteger('grand_total');
+            $table->text('message')->nullable();
             $table->timestamps();
             $table->foreign('cus_id')->references('id')->on('customers');
         });

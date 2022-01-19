@@ -69,7 +69,7 @@ var editor_config = {
     language: 'vi_VN',
     relative_urls: false,
     plugins: [
-        "advlist autolink lists image charmap print preview hr anchor pagebreak",
+        "table advlist autolink lists image charmap print preview hr anchor pagebreak",
     ],
     toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image media",
     file_picker_callback: function(callback, value, meta) {
@@ -103,13 +103,15 @@ tinymce.init({
     menubar: false,
 
 });
-// tinymce.init({
-//     selector: '#category_desc',
-//     language: 'vi_VN',
-//     toolbar: false,
-//     menubar: false,
-//
-// });
+tinymce.init({
+    plugins: [
+        "table",
+    ],
+    selector: '#specification',
+    language: 'vi_VN',
+    toolbar: "table | bold italic |",
+    menubar: false,
+});
 // tinymce.init({
 //     selector: '#category_desc_edit',
 //     language: 'vi_VN',

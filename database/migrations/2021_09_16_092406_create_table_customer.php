@@ -19,7 +19,6 @@ class CreateTableCustomer extends Migration
             $table->string('cus_email');
             $table->string('cus_tel');
             $table->string('cus_address');
-            $table->char('city');
             $table->timestamps();
         });
     }

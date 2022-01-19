@@ -1,127 +1,76 @@
 @extends('layout')
 @section('main')
 <section class="container stylization maincont">
-
-
-    <ul class="b-crumbs">
-        <li>
-            <a href="index.html">
-                Home
-            </a>
-        </li>
-        <li>
-            <span>Contacts</span>
-        </li>
-    </ul>
-    <h1 class="main-ttl"><span>Contacts</span></h1>
-    <!-- Contacts - start -->
-    <br>
-    <div class="iconbox-wrap">
-        <div class="row iconbox-list">
-            <div class="cf-xs-6 cf-sm-4 cf-lg-4 col-xs-6 col-sm-4 iconbox-i">
-                <p class="iconbox-i-img"><!-- NO SPACE --><img src="http://placehold.it/43x90" alt=""><!-- NO SPACE --></p>
-                <h3 class="iconbox-i-ttl">+7 777 123 4567</h3>
-                Let's have a<br>
-                talk together
-                <span class="iconbox-i-margin"></span>
-            </div>
-            <div class="cf-xs-6 cf-sm-4 cf-lg-4 col-xs-6 col-sm-4 iconbox-i">
-                <p class="iconbox-i-img"><!-- NO SPACE --><img src="http://placehold.it/47x90" alt=""><!-- NO SPACE --></p>
-                <h3 class="iconbox-i-ttl">Our address</h3>
-                555 South Street,<br>
-                New York City 12345
-                <span class="iconbox-i-margin"></span>
-            </div>
-            <div class="cf-xs-6 cf-sm-4 cf-lg-4 col-xs-6 col-sm-4 iconbox-i">
-                <p class="iconbox-i-img"><!-- NO SPACE --><img src="http://placehold.it/58x90" alt=""><!-- NO SPACE --></p>
-                <h3 class="iconbox-i-ttl">Schedule</h3>
-                Mon-Fri 07:00-22:00<br>
-                Sat-Sun closed
-                <span class="iconbox-i-margin"></span>
+    <div class="breadcrumb-area bg-gray">
+        <div class="container">
+            <div class="breadcrumb-content text-center">
+                <ul>
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li class="active">Contact us </li>
+                </ul>
             </div>
         </div>
     </div>
-
-    <!-- Contacts Info - end -->
-    <div class="social-wrap">
-        <div class="social-list">
-            <div class="social-i">
-                <a rel="nofollow" target="_blank" href="http://facebook.com/">
-                    <p class="social-i-img">
-                        <i class="fa fa-facebook"></i>
-                    </p>
-                    <p class="social-i-ttl">Facebook</p>
-                </a>
+    <div class="contact-area pt-115 pb-120">
+        <div class="container">
+            <div class="contact-info-wrap-3 pb-85">
+                <h3>contact info</h3>
+                <div class="row">
+                    <div class="col-lg-4 col-md-4">
+                        <div class="single-contact-info-3 text-center mb-30">
+                            <i class="icon-location-pin "></i>
+                            <h4>our address</h4>
+                            <p>77 seventh Street, USA. </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4">
+                        <div class="single-contact-info-3 extra-contact-info text-center mb-30">
+                            <ul>
+                                <li><i class="icon-screen-smartphone"></i> 716-298-1822 </li>
+                                <li><i class="icon-envelope "></i> <a href="#"> info@example.com</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4">
+                        <div class="single-contact-info-3 text-center mb-30">
+                            <i class="icon-clock "></i>
+                            <h4>openning hour</h4>
+                            <p>Monday - Friday. 9:00am - 5:00pm </p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="social-i">
-                <a rel="nofollow" target="_blank" href="http://google.com/">
-                    <p class="social-i-img">
-                        <i class="fa fa-google-plus"></i>
-                    </p>
-                    <p class="social-i-ttl">Google +</p>
-                </a>
+            <div class="get-in-touch-wrap">
+                <h3>Get In Touch</h3>
+                <div class="contact-from contact-shadow">
+                    <form id="contact-form" action="assets/mail-php/mail.php" method="post">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6">
+                                <input name="name" type="text" placeholder="Name">
+                            </div>
+                            <div class="col-lg-6 col-md-6">
+                                <input name="email" type="email" placeholder="Email">
+                            </div>
+                            <div class="col-lg-12 col-md-12">
+                                <input name="subject" type="text" placeholder="Subject">
+                            </div>
+                            <div class="col-lg-12 col-md-12">
+                                <textarea name="message" placeholder="Your Message"></textarea>
+                            </div>
+                            <div class="col-lg-12 col-md-12">
+                                <button class="submit" type="submit">Send Message</button>
+                            </div>
+                        </div>
+                    </form>
+                    <p class="form-messege"></p>
+                </div>
             </div>
-            <div class="social-i">
-                <a rel="nofollow" target="_blank" href="http://twitter.com/">
-                    <p class="social-i-img">
-                        <i class="fa fa-twitter"></i>
-                    </p>
-                    <p class="social-i-ttl">Twitter</p>
-                </a>
-            </div>
-            <div class="social-i">
-                <a rel="nofollow" target="_blank" href="http://vk.com/">
-                    <p class="social-i-img">
-                        <i class="fa fa-vk"></i>
-                    </p>
-                    <p class="social-i-ttl">Vkontakte</p>
-                </a>
-            </div>
-            <div class="social-i">
-                <a rel="nofollow" target="_blank" href="http://instagram.com/">
-                    <p class="social-i-img">
-                        <i class="fa fa-instagram"></i>
-                    </p>
-                    <p class="social-i-ttl">Instagram</p>
-                </a>
-            </div>
-            <div class="social-i">
-                <a rel="nofollow" target="_blank" href="http://youtube.com/">
-                    <p class="social-i-img">
-                        <i class="fa fa-youtube"></i>
-                    </p>
-                    <p class="social-i-ttl">Youtube</p>
-                </a>
+            <div class="contact-map pt-120">
+                <div id="map"></div>
             </div>
         </div>
     </div>
-
-    <!-- Contact Form -->
-    <div class="contactform-wrap">
-        <form action="#" class="form-validate">
-            <h3 class="component-ttl component-ttl-ct component-ttl-hasdesc"><span>Feedback</span></h3>
-            <p class="component-desc component-desc-ct">Alias minima veritatis unde illo deserunt omnis facilis</p>
-            <p class="contactform-field contactform-text">
-                <label class="contactform-label">Name</label><!-- NO SPACE --><span class="contactform-input"><input placeholder="Name" type="text" name="name" data-required="text"></span>
-            </p>
-            <p class="contactform-field contactform-email">
-                <label class="contactform-label">E-mail</label><!-- NO SPACE --><span class="contactform-input"><input placeholder="Your E-mail" type="text" name="email" data-required="text" data-required-email="email"></span>
-            </p>
-            <p class="contactform-field contactform-textarea">
-                <label class="contactform-label">Message</label><!-- NO SPACE --><span class="contactform-input"><textarea placeholder="Your message" name="mess" data-required="text"></textarea></span>
-            </p>
-            <p class="contactform-submit">
-                <input value="Send" type="submit">
-            </p>
-        </form>
-    </div>
-    <br>
-    <br>
-    <!-- Google Maps -->
-    <div class="contacts-map allstore-gmap">
-        <div class="marker" data-zoom="15" data-lat="-37.81485261872975" data-lng="144.95655298233032" data-marker="img/marker.png">534-540 Little Bourke St, Melbourne VIC 3000, Australia</div>
-    </div>
-    <!-- Contacts - end -->
-
 </section>
 @endsection

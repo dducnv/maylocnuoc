@@ -1,160 +1,98 @@
 @extends('layout')
 @section('main')
-<section class="container stylization maincont">
-
-
-    <ul class="b-crumbs">
-        <li>
-            <a href="index.html">
-                Home
-            </a>
-        </li>
-        <li>
-            <span>Cart</span>
-        </li>
-    </ul>
-    <h1 class="main-ttl"><span>Cart</span></h1>
-    <!-- Cart Items - start -->
-    <form action="#">
-
-        <div class="cart-items-wrap">
-            <table class="cart-items">
-                <thead>
-                <tr>
-                    <td class="cart-image">Photo</td>
-                    <td class="cart-ttl">Products</td>
-                    <td class="cart-price">Price</td>
-                    <td class="cart-quantity">Quantity</td>
-                    <td class="cart-summ">Summ</td>
-                    <td class="cart-del">&nbsp;</td>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td class="cart-image">
-                        <a href="product.html">
-                            <img src="http://placehold.it/61x80" alt="Similique delectus totam">
-                        </a>
-                    </td>
-                    <td class="cart-ttl">
-                        <a href="product.html">Similique delectus totam</a>
-                        <p>Color: Red</p>
-                        <p>Size: XS</p>
-                    </td>
-                    <td class="cart-price">
-                        <b>$220</b>
-                    </td>
-                    <td class="cart-quantity">
-                        <p class="cart-qnt">
-                            <input value="1" type="text">
-                            <a href="#" class="cart-plus"><i class="fa fa-angle-up"></i></a>
-                            <a href="#" class="cart-minus"><i class="fa fa-angle-down"></i></a>
-                        </p>
-                    </td>
-                    <td class="cart-summ">
-                        <b>$220</b>
-                        <p class="cart-forone">unit price <b>$220</b></p>
-                    </td>
-                    <td class="cart-del">
-                        <a href="#" class="cart-remove"></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="cart-image">
-                        <a href="product.html">
-                            <img src="http://placehold.it/69x80" alt="Eveniet nobis minus">
-                        </a>
-                    </td>
-                    <td class="cart-ttl">
-                        <a href="product.html">Eveniet nobis minus</a>
-                    </td>
-                    <td class="cart-price">
-                        <b>$150</b>
-                    </td>
-                    <td class="cart-quantity">
-                        <p class="cart-qnt">
-                            <input value="1" type="text">
-                            <a href="#" class="cart-plus"><i class="fa fa-angle-up"></i></a>
-                            <a href="#" class="cart-minus"><i class="fa fa-angle-down"></i></a>
-                        </p>
-                    </td>
-                    <td class="cart-summ">
-                        <b>$150</b>
-                        <p class="cart-forone">unit price <b>$150</b></p>
-                    </td>
-                    <td class="cart-del">
-                        <a href="#" class="cart-remove"></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="cart-image">
-                        <a href="product.html">
-                            <img src="http://placehold.it/96x80" alt="Quod soluta corrupti">
-                        </a>
-                    </td>
-                    <td class="cart-ttl">
-                        <a href="product.html">Quod soluta corrupti</a>
-                    </td>
-                    <td class="cart-price">
-                        <b>$195</b>
-                    </td>
-                    <td class="cart-quantity">
-                        <p class="cart-qnt">
-                            <input value="1" type="text">
-                            <a href="#" class="cart-plus"><i class="fa fa-angle-up"></i></a>
-                            <a href="#" class="cart-minus"><i class="fa fa-angle-down"></i></a>
-                        </p>
-                    </td>
-                    <td class="cart-summ">
-                        <b>$195</b>
-                        <p class="cart-forone">unit price <b>$195</b></p>
-                    </td>
-                    <td class="cart-del">
-                        <a href="#" class="cart-remove"></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="cart-image">
-                        <a href="product.html">
-                            <img src="http://placehold.it/67x80" alt="Perferendis recusandae">
-                        </a>
-                    </td>
-                    <td class="cart-ttl">
-                        <a href="product.html">Perferendis recusandae</a>
-                        <p>Color: Blue</p>
-                        <p>Size: XS</p>
-                    </td>
-                    <td class="cart-price">
-                        <b>$250</b>
-                    </td>
-                    <td class="cart-quantity">
-                        <p class="cart-qnt">
-                            <input value="1" type="text">
-                            <a href="#" class="cart-plus"><i class="fa fa-angle-up"></i></a>
-                            <a href="#" class="cart-minus"><i class="fa fa-angle-down"></i></a>
-                        </p>
-                    </td>
-                    <td class="cart-summ">
-                        <b>$250</b>
-                        <p class="cart-forone">unit price <b>$250</b></p>
-                    </td>
-                    <td class="cart-del">
-                        <a href="#" class="cart-remove"></a>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
+    <div class="breadcrumb-area bg-gray">
+        <div class="container">
+            <div class="breadcrumb-content text-center">
+                <ul>
+                    <li>
+                        <a href="index.html">Trang Chủ</a>
+                    </li>
+                    <li class="active">Giỏ Hàng</li>
+                </ul>
+            </div>
         </div>
-        <ul class="cart-total">
-            <li class="cart-summ">TOTAL: <b>$815</b></li>
-        </ul>
-        <div class="cart-submit">
+    </div>
+    <div class="cart-main-area pt-115 pb-120">
+        <div class="container">
+            <h3 class="cart-page-title">Giỏ Hàng Của Bạn</h3>
+            <div id="cart_page">
+                <div class="row">
 
-            <a href="{{asset('/thanh-toan')}}" class="cart-submit-btn">Checkout</a>
-            <a href="#" class="cart-clear">Clear cart</a>
+                    <div class="col-lg-8 col-md-12 col-sm-12 col-12">
+                        <form action="#">
+                            <div class="table-content table-responsive cart-table-content">
+                                <table>
+                                    <thead class="thead-cart">
+                                    <tr>
+                                        <th>Ảnh</th>
+                                        <th>Tên Sản Phẩm</th>
+                                        <th>Giá Tiền</th>
+                                        <th>Số Lượng</th>
+                                        <th>Đơn Giá</th>
+                                        <th>Xoá Sản Phẩm</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    @forelse($cart as $item)
+                                        <tr>
+                                            <td class="product-thumbnail">
+                                                <img style="width: 150px; height: auto" src="{{$item->product_image}}"
+                                                     alt="">
+                                            </td>
+                                            <td class="product-name"><a href="#">{{$item->product_name}}</a></td>
+                                            <td class="product-price-cart"><span class="amount">@money($item->product_price)</span>
+                                            </td>
+                                            <td class="product-quantity pro-details-quality">
+                                                <div class="cart-plus-minus">
+                                                    <input class="cart-plus-minus-box" type="text" name="qtybutton"
+                                                           value="1">
+                                                </div>
+                                            </td>
+                                            <td class="product-subtotal">@money($item->product_price)</td>
+                                            <td class="product-remove">
+                                                <a href="javascript:void(0)" onclick="removeCartItem({{$item->id}})"><i
+                                                        class="icon_close"></i></a>
+                                            </td>
+                                        </tr>
+                                    @empty
+                                        <tr>
+                                            <td colspan="6" class="text-left px-4"> Giỏ Hàng Chưa Có Sản Phẩm Nào.</td>
+                                        </tr>
+                                    @endforelse
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="cart-shiping-update-wrapper">
+                                        <div class="cart-shiping-update">
+                                            <a href="#">Tiếp Tục Mua Hàng</a>
+                                        </div>
+                                        <div class="cart-clear">
+                                            @if($cart != null)
+                                                <button>Cập Nhật Số Lượng</button>
+                                                <a onclick="removeAllCart()" href="javascript:void(0)">Xoá Tất Cả</a>
+                                            @endif
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-lg-4 col-md-12 col-sm-12 col-12">
+
+                        <div class="grand-totall">
+                            <div class="title-wrap">
+                                <h4 class="cart-bottom-title section-bg-gary-cart">Tổng Tiền</h4>
+                            </div>
+                            <h4 class="grand-totall-title mt-20">{{$cart_qty}} Sản Phẩm  <span>@money($grandTotal)</span></h4>
+                            <a href="{{asset('/thanh-toan')}}">Thanh Toán</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
-    </form>
-    <!-- Cart Items - end -->
-
-</section>
+    </div>
 @endsection

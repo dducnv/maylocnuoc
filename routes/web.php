@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WebController;
+use App\Http\Controllers\CartController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,10 +20,16 @@ use App\Http\Controllers\WebController;
 
 Route::get('/',[WebController::class,'index']);
 Route::get('muc-luc',[WebController::class,'catalog']);
-Route::get('chi-tiet',[WebController::class,'details_product']);
-Route::get('gio-hang',[WebController::class,'cart']);
+Route::get('search-and-sort',[WebController::class,'sortSearch']);
+Route::get('/chi-tiet/{slug}',[WebController::class,'details_product']);
+Route::post("/them-gio-hang/{id}",[CartController::class,"add_to_cart"]);
+Route::get("/delete-cart-item/{id}",[CartController::class,"removeItemCart"]);
+Route::get("/delete-all-cart",[CartController::class,"removeAllCart"]);
+Route::get('gio-hang',[CartController::class,'cart']);
 Route::get('lien-he',[WebController::class,'contacts']);
 Route::get('thanh-toan',[WebController::class,'checkout']);
+Route::post('checkout',[WebController::class,'checkoutSave']);
+Route::get('xac-nhan',[WebController::class,'confirm']);
 
 Route::middleware(['auth:sanctum','verified'])->get('/dashboard',function (){
     return view('dashboard');

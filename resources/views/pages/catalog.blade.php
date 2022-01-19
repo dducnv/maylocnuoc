@@ -1,541 +1,391 @@
 @extends('layout')
 @section('main')
-<section class="container">
-
-
-    <ul class="b-crumbs">
-        <li>
-            <a href="index.html">
-                Home
-            </a>
-        </li>
-        <li>
-            <a href="catalog-list.html">
-                Catalog
-            </a>
-        </li>
-        <li>
-            <span>Women</span>
-        </li>
-    </ul>
-    <h1 class="main-ttl"><span>Women</span></h1>
-    <!-- Catalog Sidebar - start -->
-    <div class="section-sb">
-
-        <!-- Catalog Categories - start -->
-        <div class="section-sb-current">
-            <h3><a href="catalog-list.html">Women <span id="section-sb-toggle" class="section-sb-toggle"><span class="section-sb-ico"></span></span></a></h3>
-            <ul class="section-sb-list" id="section-sb-list">
-                <li class="categ-1">
-                    <a href="catalog-list.html">
-                        <span class="categ-1-label">Knitwear</span>
-                    </a>
-                </li>
-                <li class="categ-1">
-                    <a href="catalog-list.html">
-                        <span class="categ-1-label">Dresses</span>
-                    </a>
-                </li>
-                <li class="categ-1 has_child">
-                    <a href="catalog-list.html">
-                        <span class="categ-1-label">Bags</span>
-                        <span class="section-sb-toggle"><span class="section-sb-ico"></span></span>
-                    </a>
-                    <ul>
-                        <li class="categ-2">
-                            <a href="catalog-list.html">
-                                <span class="categ-2-label">Shoulder Bags</span>
-                            </a>
-                        </li>
-                        <li class="categ-2">
-                            <a href="catalog-list.html">
-                                <span class="categ-2-label">Falabella</span>
-                            </a>
-                        </li>
-                        <li class="categ-2">
-                            <a href="catalog-list.html">
-                                <span class="categ-2-label">Becks</span>
-                            </a>
-                        </li>
-                        <li class="categ-2">
-                            <a href="catalog-list.html">
-                                <span class="categ-2-label">Clutches</span>
-                            </a>
-                        </li>
-                        <li class="categ-2">
-                            <a href="catalog-list.html">
-                                <span class="categ-2-label">Travel Bags</span>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="categ-1 has_child">
-                    <a href="catalog-list.html">
-                        <span class="categ-1-label">Accessories</span>
-                        <span class="section-sb-toggle"><span class="section-sb-ico"></span></span>
-                    </a>
-                    <ul>
-                        <li class="categ-2">
-                            <a href="catalog-list.html">
-                                <span class="categ-2-label">Sunglasses</span>
-                            </a>
-                        </li>
-                        <li class="categ-2">
-                            <a href="catalog-list.html">
-                                <span class="categ-2-label">Tech Cases</span>
-                            </a>
-                        </li>
-                        <li class="categ-2">
-                            <a href="catalog-list.html">
-                                <span class="categ-2-label">Jewelry</span>
-                            </a>
-                        </li>
-                        <li class="categ-2">
-                            <a href="catalog-list.html">
-                                <span class="categ-2-label">Stella</span>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="categ-1">
-                    <a href="catalog-list.html">
-                        <span class="categ-1-label">Coats & Jackets</span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <!-- Catalog Categories - end -->
-
-        <!-- Filter - start -->
-        <div class="section-filter">
-            <button id="section-filter-toggle" class="section-filter-toggle" data-close="Hide Filter" data-open="Show Filter">
-                <span>Show Filter</span> <i class="fa fa-angle-down"></i>
-            </button>
-            <div class="section-filter-cont">
-                <div class="section-filter-price">
-                    <div class="range-slider section-filter-price" data-min="0" data-max="1000" data-from="200" data-to="800" data-prefix="$" data-grid="false"></div>
-                </div>
-                <div class="section-filter-buttons">
-                    <input class="btn btn-themes" id="set_filter" name="set_filter" value="Apply filter" type="button">
-                    <input class="btn btn-link" id="del_filter" name="del_filter" value="Reset" type="button">
-                </div>
+    <div class="breadcrumb-area bg-gray">
+        <div class="container">
+            <div class="breadcrumb-content text-center">
+                <ul>
+                    <li>
+                        <a href="{{asset('/')}}">Trang Chủ</a>
+                    </li>
+                    <li class="active">Sản Phẩm</li>
+                </ul>
             </div>
         </div>
-        <!-- Filter - end -->
-
     </div>
-    <!-- Catalog Sidebar - end -->
-    <!-- Catalog Items | List V2 - start -->
-    <div class="section-cont">
+    <div class="shop-area pt-120 pb-120">
+        <div class="container">
+            <div class="row flex-row-reverse">
+                <div class="col-lg-9">
+                    @if(!$search_key == null)
+                        <p><i class="icon_search"></i> Kết Quả Tìm Kiếm Cho Từ Khoá "<span
+                                class="text-danger" >{{$search_key}}</span>"</p>
+                    @endif
+                    <div id="search-key">
 
-        <!-- Catalog Topbar - start -->
-        <div class="section-top">
+                    </div>
+                    <div class="shop-topbar-wrapper">
+                        <div class="shop-topbar-left">
+                            <div class="view-mode nav">
+                                <a href="#shop-1" data-toggle="tab"><i class="icon-grid"></i></a>
+                                <a class="active" href="#shop-2" data-toggle="tab"><i class="icon-menu"></i></a>
+                            </div>
+                            <p>Đang Hiển Thị 1 - 20 Của 30 Kết Quả </p>
+                        </div>
+                        <div class="product-sorting-wrapper">
+                            <div class="product-shorting shorting-style">
+                                <label for="display-item">Hiển Thị :</label>
+                                <select onchange="functionAjax()" id="display-item">
+                                    <option value="">10</option>
+                                    <option value="">15</option>
+                                    <option value="">20</option>
+                                </select>
+                            </div>
+                            <div class="product-show shorting-style">
+                                <label for="sort-by">Sắp Xếp:</label>
+                                <select onchange="functionAjax()" id="sort-by">
+                                    <option value="price-asc">Giá Thấp -> Cao</option>
+                                    <option value="price-desc">Giá Cao -> Thấp</option>
+                                    <option value="name-asc"> A -> Z</option>
+                                    <option value="name-desc"> Z -> A</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="product-res">
+                        <div class="shop-bottom-area">
+                            <div class="tab-content jump">
+                                <div id="shop-1" class="tab-pane">
+                                    <div class="row">
+                                        @forelse($products as $item)
+                                            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
+                                                <div class="product-plr-1">
+                                                    <div class="single-product-wrap mb-60">
+                                                        <div class="product-img product-img-zoom mb-15">
+                                                            <a href="{{url('/chi-tiet',['slug'=>$item->product_slug])}}">
+                                                                <img src="{{$item->product_image}}" alt="">
+                                                            </a>
+                                                            <span class="pro-badge left bg-red">-40%</span>
+                                                            <div class="product-action-2 tooltip-style-2">
+                                                                <button title="Xem Nhanh" data-toggle="modal"
+                                                                        data-target="#product-{{$item->id}}"><i
+                                                                        class="icon-eye icons"></i></button>
+                                                            </div>
+                                                        </div>
+                                                        <div class="product-content-wrap-3">
+                                                            <div class="product-content-categories">
+                                                                <a class="blue"
+                                                                   href="#">{{$item->category->category_name}}</a>
+                                                            </div>
+                                                            <h3><a class="blue"
+                                                                   href="{{url('/chi-tiet',['slug'=>$item->product_slug])}}">{{$item->product_name}}</a>
+                                                            </h3>
+                                                            <div class="product-rating-wrap-2">
+                                                                <div class="product-rating-4">
+                                                                    <i class="icon_star"></i>
+                                                                    <i class="icon_star"></i>
+                                                                    <i class="icon_star"></i>
+                                                                    <i class="icon_star"></i>
+                                                                    <i class="icon_star"></i>
+                                                                </div>
+                                                                <span>(4)</span>
+                                                            </div>
+                                                            <div class="product-price-4">
+                                                                <span>@money($item->product_price)</span>
+                                                            </div>
+                                                        </div>
+                                                        <div
+                                                            class="product-content-wrap-3 product-content-position-2 pro-position-2-padding-dec">
+                                                            <div class="product-content-categories">
+                                                                <a class="blue"
+                                                                   href="#">{{$item->category->category_name}}</a>
+                                                            </div>
+                                                            <h3><a class="blue"
+                                                                   href="{{url('/chi-tiet',['slug'=>$item->product_slug])}}">{{$item->product_name}}</a>
+                                                            </h3>
+                                                            <div class="product-rating-wrap-2">
+                                                                <div class="product-rating-4">
+                                                                    <i class="icon_star"></i>
+                                                                    <i class="icon_star"></i>
+                                                                    <i class="icon_star"></i>
+                                                                    <i class="icon_star"></i>
+                                                                    <i class="icon_star"></i>
+                                                                </div>
+                                                            </div>
+                                                            <div class="product-price-4">
+                                                                <span>@money($item->product_price)</span>
+                                                            </div>
+                                                            <div class="pro-add-to-cart-2">
+                                                                <button onclick="addToCart({{$item->id}})">Thêm Giỏ Hàng
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="modal modal-quickview fade" id="product-{{$item->id}}"
+                                                     tabindex="-1" role="dialog">
+                                                    {{ csrf_field() }}
 
-            <!-- View Mode -->
-            {{-- <ul class="section-mode">
-                <li class="section-mode-gallery"><a title="View mode: Gallery" href="catalog-gallery.html"></a></li>
-                <li class="section-mode-list active"><a title="View mode: List" href="catalog-list.html"></a></li>
-                <li class="section-mode-table"><a title="View mode: Table" href="catalog-table.html"></a></li>
-            </ul> --}}
+                                                    <div class="modal-dialog" role="document">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <button type="button" class="close" data-dismiss="modal"
+                                                                        aria-label="Close"><span
+                                                                        aria-hidden="true">x</span>
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <div class="row">
+                                                                    <div class="col-lg-5 col-md-6 col-12 col-sm-12">
+                                                                        <div class="image-quickView">
+                                                                            <img src="{{$item->product_image}}" alt="">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-lg-7 col-md-6 col-12 col-sm-12">
+                                                                        <div
+                                                                            class="product-details-content quickview-content">
+                                                                            <h2>{{$item->product_name}}</h2>
+                                                                            <div class="product-ratting-review-wrap">
+                                                                                <div class="product-review-order">
+                                                                                    <span>242 orders</span>
+                                                                                </div>
+                                                                            </div>
+                                                                            <p>{!! $item->product_desc !!}</p>
+                                                                            <div class="pro-details-price">
+                                                                                <span class="new-price">@money($item->product_price)</span>
+                                                                                <span class="old-price">$95.72</span>
+                                                                            </div>
 
-            <!-- Sorting -->
-            <div class="section-sortby">
-                <p>default sorting</p>
-                <ul>
-                    <li>
-                        <a href="#">sort by popularity</a>
-                    </li>
-                    <li>
-                        <a href="#">low price to high</a>
-                    </li>
-                    <li>
-                        <a href="#">high price to low</a>
-                    </li>
-                    <li>
-                        <a href="#">by title A <i class="fa fa-angle-right"></i> Z</a>
-                    </li>
-                    <li>
-                        <a href="#">by title Z <i class="fa fa-angle-right"></i> A</a>
-                    </li>
-                    <li>
-                        <a href="#">default sorting</a>
-                    </li>
-                </ul>
-            </div>
+                                                                            <div class="pro-details-quality">
+                                                                                <span>Quantity:</span>
+                                                                                <div class="cart-plus-minus">
+                                                                                    <form>
+                                                                                        <label>
+                                                                                            <input
+                                                                                                class="cart-plus-minus-box"
+                                                                                                type="text"
+                                                                                                id="qty-{{$item->id}}"
+                                                                                                min="1" value="1">
+                                                                                        </label>
+                                                                                    </form>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="product-details-meta">
+                                                                                <ul>
+                                                                                    <li><span>Danh Mục:</span> <a
+                                                                                            href="#">{{$item->category->category_name}}</a>
+                                                                                    </li>
+                                                                                </ul>
+                                                                            </div>
+                                                                            <div class="pro-details-action-wrap">
+                                                                                <div class="pro-details-add-to-cart">
+                                                                                    <a title="Add to Cart"
+                                                                                       onclick="addToCart({{$item->id}})"
+                                                                                       href="javascript:void(0)">Thêm
+                                                                                        Giỏ Hàng</a>
+                                                                                </div>
+                                                                                <div class="pro-details-action">
+                                                                                    <a class="social" title="Social"
+                                                                                       href="#"><i
+                                                                                            class="icon-share"></i></a>
+                                                                                    <div class="product-dec-social">
+                                                                                        <a class="facebook"
+                                                                                           title="Facebook"
+                                                                                           href="#"><i
+                                                                                                class="icon-social-facebook"></i></a>
+                                                                                        <a class="twitter"
+                                                                                           title="Twitter" href="#"><i
+                                                                                                class="icon-social-twitter"></i></a>
+                                                                                        <a class="instagram"
+                                                                                           title="Instagram"
+                                                                                           href="#"><i
+                                                                                                class="icon-social-instagram"></i></a>
+                                                                                        <a class="pinterest"
+                                                                                           title="Pinterest"
+                                                                                           href="#"><i
+                                                                                                class="icon-social-pinterest"></i></a>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            @empty
+                                                <div class="text-center">
+                                                    <span class="text-center">Không có sản phẩm nào</span>
+                                                </div>
+                                            @endforelse
+                                    </div>
+                                </div>
+                                <div id="shop-2" class="tab-pane active">
+                                    @forelse($products as $item)
+                                        <div class="shop-list-wrap mb-30">
+                                            <div class="row">
+                                                <div class="col-xl-4 col-lg-5 col-md-6 col-sm-6">
+                                                    <div class="product-list-img">
+                                                        <a href="{{url('/chi-tiet',['slug'=>$item->product_slug])}}">
+                                                            <img src="{{$item->product_image}}" alt="Product Style">
+                                                        </a>
+                                                        <div class="product-list-quickview">
+                                                            <button title="Xem Nhanh" data-toggle="modal"
+                                                                    data-target="#product-list-{{$item->id}}"><i
+                                                                    class="icon-eye icons"></i></button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-8 col-lg-7 col-md-6 col-sm-6">
+                                                    <div class="shop-list-content">
+                                                        <h3>
+                                                            <a href="{{url('/chi-tiet',['slug'=>$item->product_slug])}}">{{$item->product_name}}</a>
+                                                        </h3>
+                                                        <div class="pro-list-price">
+                                                            <span class="new-price">@money($item->product_price)</span>
+                                                            <span class="old-price">$45.80</span>
+                                                        </div>
+                                                        <div class="product-list-rating-wrap">
+                                                            <div class="product-list-rating">
+                                                                <i class="icon_star"></i>
+                                                                <i class="icon_star"></i>
+                                                                <i class="icon_star"></i>
+                                                                <i class="icon_star"></i>
+                                                                <i class="icon_star"></i>
+                                                            </div>
+                                                        </div>
+                                                        <p>{!! $item->product_desc !!}</p>
+                                                        <div class="product-list-action">
+                                                            <button onclick="addToCart({{$item->id}})" title="Thêm Giỏ Hàng"><i
+                                                                    class="icon-basket-loaded"></i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="modal modal-quickview fade" id="product-list-{{$item->id}}"
+                                                 tabindex="-1" role="dialog">
+                                                {{ csrf_field() }}
+                                                <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <button type="button" class="close" data-dismiss="modal"
+                                                                    aria-label="Close"><span aria-hidden="true">x</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <div class="row">
+                                                                <div class="col-lg-5 col-md-6 col-12 col-sm-12">
+                                                                    <div class="image-quickView">
+                                                                        <img src="{{$item->product_image}}" alt="">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-lg-7 col-md-6 col-12 col-sm-12">
+                                                                    <div
+                                                                        class="product-details-content quickview-content">
+                                                                        <h2>{{$item->product_name}}</h2>
+                                                                        <div class="product-ratting-review-wrap">
+                                                                            <div class="product-review-order">
+                                                                                <span>242 orders</span>
+                                                                            </div>
+                                                                        </div>
+                                                                        <p>{!! $item->product_desc !!}</p>
+                                                                        <div class="pro-details-price">
+                                                                            <span class="new-price">@money($item->product_price)</span>
+                                                                            <span class="old-price">$95.72</span>
+                                                                        </div>
 
-            <!-- Count per page -->
-            <div class="section-count">
-                <p>12</p>
-                <ul>
-                    <li><a href="#">12</a></li>
-                    <li><a href="#">24</a></li>
-                    <li><a href="#">48</a></li>
-                </ul>
-            </div>
-
-        </div>
-        <!-- Catalog Topbar - end -->
-        <div class="prod-items section-items prod-list2">
-            <div class="prodlist-i">
-                <a class="list-img-carousel prodlist-i-img" href="product.html"><!-- NO SPACE --><img src="http://placehold.it/300x588" alt="Quae quasi adipisci alias"><img src="http://placehold.it/300x433" alt="Quae quasi adipisci alias"><img src="http://placehold.it/300x433" alt="Quae quasi adipisci alias"><img src="http://placehold.it/300x433" alt="Quae quasi adipisci alias"><img src="http://placehold.it/300x433" alt="Quae quasi adipisci alias"><!-- NO SPACE --></a>
-                <div class="prodlist-i-cont">
-                    <h3><a href="product.html">Quae quasi adipisci alias</a></h3>
-                    <p class="prodlist-i-info">
-                        <a href="#" class="prodlist-i-favorites"><i class="fa fa-heart"></i> Add to wishlist</a>
-                        <a href="#" class="qview-btn prodlist-i-qview"><i class="fa fa-search"></i> Quick view</a>
-                        <a class="prodlist-i-compare" href="#"><i class="fa fa-bar-chart"></i> Compare</a>
-                    </p>
-                    <div class="prodlist-i-txt">
-                        Cum nihil saepe itaque, quibusdam quos libero, et possimus rerum ratione similique                        </div>
-                    <div class="prodlist-i-action">
-                    <span class="prodlist-i-price">
-                        <b>$85</b>
-                                                </span>
-                        <p class="prodlist-i-qnt">
-                            <input value="1" type="text">
-                            <a href="#" class="prodlist-i-plus"><i class="fa fa-angle-up"></i></a>
-                            <a href="#" class="prodlist-i-minus"><i class="fa fa-angle-down"></i></a>
-                        </p>
-                        <p class="prodlist-i-addwrap">
-                            <a href="#" class="prodlist-i-add">Add to cart</a>
-                        </p>
+                                                                        <div class="pro-details-quality">
+                                                                            <span>Quantity:</span>
+                                                                            <div class="cart-plus-minus">
+                                                                                <form>
+                                                                                    <label>
+                                                                                        <input
+                                                                                            class="cart-plus-minus-box"
+                                                                                            type="text"
+                                                                                            id="qty-{{$item->id}}"
+                                                                                            min="1" value="1">
+                                                                                    </label>
+                                                                                </form>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="product-details-meta">
+                                                                            <ul>
+                                                                                <li><span>Danh Mục:</span> <a
+                                                                                        href="#">{{$item->category->category_name}}</a>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                        <div class="pro-details-action-wrap">
+                                                                            <div class="pro-details-add-to-cart">
+                                                                                <a title="Add to Cart"
+                                                                                   onclick="addToCart({{$item->id}})"
+                                                                                   href="javascript:void(0)">Thêm Giỏ
+                                                                                    Hàng</a>
+                                                                            </div>
+                                                                            <div class="pro-details-action">
+                                                                                <a class="social" title="Social"
+                                                                                   href="#"><i
+                                                                                        class="icon-share"></i></a>
+                                                                                <div class="product-dec-social">
+                                                                                    <a class="facebook" title="Facebook"
+                                                                                       href="#"><i
+                                                                                            class="icon-social-facebook"></i></a>
+                                                                                    <a class="twitter" title="Twitter"
+                                                                                       href="#"><i
+                                                                                            class="icon-social-twitter"></i></a>
+                                                                                    <a class="instagram"
+                                                                                       title="Instagram"
+                                                                                       href="#"><i
+                                                                                            class="icon-social-instagram"></i></a>
+                                                                                    <a class="pinterest"
+                                                                                       title="Pinterest"
+                                                                                       href="#"><i
+                                                                                            class="icon-social-pinterest"></i></a>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @empty
+                                        <div class="text-center">
+                                            <span>Không có sản phẩm nào</span>
+                                        </div>
+                                    @endforelse
+                                </div>
+                            </div>
+                            {!! $products->appends(request()->input())->links("vendor.pagination.default") !!}
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="qview-modal">
-                <div class="prod-wrap">
-                    <a href="product.html">
-                        <h1 class="main-ttl">
-                            <span>Reprehenderit adipisci</span>
-                        </h1>
-                    </a>
-                    <div class="prod-slider-wrap">
-                        <div class="prod-slider">
-                            <ul class="prod-slider-car">
-                                <li>
-                                    <a data-fancybox-group="popup-product" class="fancy-img" href="http://placehold.it/500x525">
-                                        <img src="http://placehold.it/500x525" alt="">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a data-fancybox-group="popup-product" class="fancy-img" href="http://placehold.it/500x591">
-                                        <img src="http://placehold.it/500x591" alt="">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a data-fancybox-group="popup-product" class="fancy-img" href="http://placehold.it/500x525">
-                                        <img src="http://placehold.it/500x525" alt="">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a data-fancybox-group="popup-product" class="fancy-img" href="http://placehold.it/500x722">
-                                        <img src="http://placehold.it/500x722" alt="">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a data-fancybox-group="popup-product" class="fancy-img" href="http://placehold.it/500x722">
-                                        <img src="http://placehold.it/500x722" alt="">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a data-fancybox-group="popup-product" class="fancy-img" href="http://placehold.it/500x722">
-                                        <img src="http://placehold.it/500x722" alt="">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a data-fancybox-group="popup-product" class="fancy-img" href="http://placehold.it/500x722">
-                                        <img src="http://placehold.it/500x722" alt="">
-                                    </a>
-                                </li>
-                            </ul>
+                <div class="col-lg-3">
+                    <div class="sidebar-wrapper sidebar-wrapper-mrg-right">
+                        <div class="sidebar-widget mb-40">
+                            <h4 class="sidebar-widget-title">Tìm Kiếm </h4>
+                            <div class="sidebar-search">
+                                <form class="sidebar-search-form" action="#">
+                                    <input type="text" onkeyup="functionAjax()" id="search-cate" placeholder="Nhập Từ Khoá...">
+                                </form>
+                            </div>
                         </div>
-                        <div class="prod-thumbs">
-                            <ul class="prod-thumbs-car">
-                                <li>
-                                    <a data-slide-index="0" href="#">
-                                        <img src="http://placehold.it/500x525" alt="">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a data-slide-index="1" href="#">
-                                        <img src="http://placehold.it/500x591" alt="">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a data-slide-index="2" href="#">
-                                        <img src="http://placehold.it/500x525" alt="">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a data-slide-index="3" href="#">
-                                        <img src="http://placehold.it/500x722" alt="">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a data-slide-index="4" href="#">
-                                        <img src="http://placehold.it/500x722" alt="">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a data-slide-index="5" href="#">
-                                        <img src="http://placehold.it/500x722" alt="">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a data-slide-index="6" href="#">
-                                        <img src="http://placehold.it/500x722" alt="">
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="prod-cont">
-                        <p class="prod-actions">
-                            <a href="#" class="prod-favorites"><i class="fa fa-heart"></i> Add to Wishlist</a>
-                            <a href="#" class="prod-compare"><i class="fa fa-bar-chart"></i> Compare</a>
-                        </p>
-                        <div class="prod-skuwrap">
-                            <p class="prod-skuttl">Color</p>
-                            <ul class="prod-skucolor">
-                                <li class="active">
-                                    <img src="img/color/blue.jpg" alt="">
-                                </li>
-                                <li>
-                                    <img src="img/color/red.jpg" alt="">
-                                </li>
-                                <li>
-                                    <img src="img/color/green.jpg" alt="">
-                                </li>
-                                <li>
-                                    <img src="img/color/yellow.jpg" alt="">
-                                </li>
-                                <li>
-                                    <img src="img/color/purple.jpg" alt="">
-                                </li>
-                            </ul>
-                            <p class="prod-skuttl">Sizes</p>
-                            <div class="offer-props-select">
-                                <p>XL</p>
+                        <div class="sidebar-widget shop-sidebar-border mb-35 pt-40">
+                            <h4 class="sidebar-widget-title">Danh Mục </h4>
+                            <div class="shop-catigory">
                                 <ul>
-                                    <li><a href="#">XS</a></li>
-                                    <li><a href="#">S</a></li>
-                                    <li><a href="#">M</a></li>
-                                    <li class="active"><a href="#">XL</a></li>
-                                    <li><a href="#">L</a></li>
-                                    <li><a href="#">4XL</a></li>
-                                    <li><a href="#">XXL</a></li>
+                                    {{categoryCatalog($categoriesView)}}
                                 </ul>
                             </div>
                         </div>
-                        <div class="prod-info">
-                            <p class="prod-price">
-                                <b class="item_current_price">$238</b>
-                            </p>
-                            <p class="prod-qnt">
-                                <input type="text" value="1">
-                                <a href="#" class="prod-plus"><i class="fa fa-angle-up"></i></a>
-                                <a href="#" class="prod-minus"><i class="fa fa-angle-down"></i></a>
-                            </p>
-                            <p class="prod-addwrap">
-                                <a href="#" class="prod-add">Add to cart</a>
-                            </p>
-                        </div>
-                      
                     </div>
                 </div>
             </div>
-
         </div>
-        <div class="prod-items section-items prod-list2">
-            <div class="prodlist-i">
-                <a class="list-img-carousel prodlist-i-img" href="product.html"><!-- NO SPACE --><img src="http://placehold.it/300x588" alt="Quae quasi adipisci alias"><img src="http://placehold.it/300x433" alt="Quae quasi adipisci alias"><img src="http://placehold.it/300x433" alt="Quae quasi adipisci alias"><img src="http://placehold.it/300x433" alt="Quae quasi adipisci alias"><img src="http://placehold.it/300x433" alt="Quae quasi adipisci alias"><!-- NO SPACE --></a>
-                <div class="prodlist-i-cont">
-                    <h3><a href="product.html">Quae quasi adipisci alias</a></h3>
-                    <p class="prodlist-i-info">
-                        <a href="#" class="prodlist-i-favorites"><i class="fa fa-heart"></i> Add to wishlist</a>
-                        <a href="#" class="qview-btn prodlist-i-qview"><i class="fa fa-search"></i> Quick view</a>
-                        <a class="prodlist-i-compare" href="#"><i class="fa fa-bar-chart"></i> Compare</a>
-                    </p>
-                    <div class="prodlist-i-txt">
-                        Cum nihil saepe itaque, quibusdam quos libero, et possimus rerum ratione similique                        </div>
-                    <div class="prodlist-i-action">
-                    <span class="prodlist-i-price">
-                        <b>$85</b>
-                                                </span>
-                        <p class="prodlist-i-qnt">
-                            <input value="1" type="text">
-                            <a href="#" class="prodlist-i-plus"><i class="fa fa-angle-up"></i></a>
-                            <a href="#" class="prodlist-i-minus"><i class="fa fa-angle-down"></i></a>
-                        </p>
-                        <p class="prodlist-i-addwrap">
-                            <a href="#" class="prodlist-i-add">Add to cart</a>
-                        </p>
-                    </div>
-                </div>
-
-
-            </div>
-            <div class="qview-modal">
-                <div class="prod-wrap">
-                    <a href="product.html">
-                        <h1 class="main-ttl">
-                            <span>Reprehenderit adipisci</span>
-                        </h1>
-                    </a>
-                    <div class="prod-slider-wrap">
-                        <div class="prod-slider">
-                            <ul class="prod-slider-car">
-                                <li>
-                                    <a data-fancybox-group="popup-product" class="fancy-img" href="http://placehold.it/500x525">
-                                        <img src="http://placehold.it/500x525" alt="">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a data-fancybox-group="popup-product" class="fancy-img" href="http://placehold.it/500x591">
-                                        <img src="http://placehold.it/500x591" alt="">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a data-fancybox-group="popup-product" class="fancy-img" href="http://placehold.it/500x525">
-                                        <img src="http://placehold.it/500x525" alt="">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a data-fancybox-group="popup-product" class="fancy-img" href="http://placehold.it/500x722">
-                                        <img src="http://placehold.it/500x722" alt="">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a data-fancybox-group="popup-product" class="fancy-img" href="http://placehold.it/500x722">
-                                        <img src="http://placehold.it/500x722" alt="">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a data-fancybox-group="popup-product" class="fancy-img" href="http://placehold.it/500x722">
-                                        <img src="http://placehold.it/500x722" alt="">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a data-fancybox-group="popup-product" class="fancy-img" href="http://placehold.it/500x722">
-                                        <img src="http://placehold.it/500x722" alt="">
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="prod-thumbs">
-                            <ul class="prod-thumbs-car">
-                                <li>
-                                    <a data-slide-index="0" href="#">
-                                        <img src="http://placehold.it/500x525" alt="">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a data-slide-index="1" href="#">
-                                        <img src="http://placehold.it/500x591" alt="">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a data-slide-index="2" href="#">
-                                        <img src="http://placehold.it/500x525" alt="">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a data-slide-index="3" href="#">
-                                        <img src="http://placehold.it/500x722" alt="">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a data-slide-index="4" href="#">
-                                        <img src="http://placehold.it/500x722" alt="">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a data-slide-index="5" href="#">
-                                        <img src="http://placehold.it/500x722" alt="">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a data-slide-index="6" href="#">
-                                        <img src="http://placehold.it/500x722" alt="">
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="prod-cont">
-                        <p class="prod-actions">
-                            <a href="#" class="prod-favorites"><i class="fa fa-heart"></i> Add to Wishlist</a>
-                            <a href="#" class="prod-compare"><i class="fa fa-bar-chart"></i> Compare</a>
-                        </p>
-                        <div class="prod-skuwrap">
-                            <p class="prod-skuttl">Color</p>
-                            <ul class="prod-skucolor">
-                                <li class="active">
-                                    <img src="img/color/blue.jpg" alt="">
-                                </li>
-                                <li>
-                                    <img src="img/color/red.jpg" alt="">
-                                </li>
-                                <li>
-                                    <img src="img/color/green.jpg" alt="">
-                                </li>
-                                <li>
-                                    <img src="img/color/yellow.jpg" alt="">
-                                </li>
-                                <li>
-                                    <img src="img/color/purple.jpg" alt="">
-                                </li>
-                            </ul>
-                            <p class="prod-skuttl">Sizes</p>
-                            <div class="offer-props-select">
-                                <p>XL</p>
-                                <ul>
-                                    <li><a href="#">XS</a></li>
-                                    <li><a href="#">S</a></li>
-                                    <li><a href="#">M</a></li>
-                                    <li class="active"><a href="#">XL</a></li>
-                                    <li><a href="#">L</a></li>
-                                    <li><a href="#">4XL</a></li>
-                                    <li><a href="#">XXL</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="prod-info">
-                            <p class="prod-price">
-                                <b class="item_current_price">$238</b>
-                            </p>
-                            <p class="prod-qnt">
-                                <input type="text" value="1">
-                                <a href="#" class="prod-plus"><i class="fa fa-angle-up"></i></a>
-                                <a href="#" class="prod-minus"><i class="fa fa-angle-down"></i></a>
-                            </p>
-                            <p class="prod-addwrap">
-                                <a href="#" class="prod-add">Add to cart</a>
-                            </p>
-                        </div>
-                        
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-        <!-- Pagination - start -->
-        <ul class="pagi">
-            <li class="active"><span>1</span></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
-            <li class="pagi-next"><a href="#"><i class="fa fa-angle-double-right"></i></a></li>
-        </ul>
-        <!-- Pagination - end -->
     </div>
-    <!-- Catalog Items | List V2 - end -->
-
-    <!-- Quick View Product - start -->
-
-    <!-- Quick View Product - end -->
-</section>
 @endsection

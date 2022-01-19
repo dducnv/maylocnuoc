@@ -153,6 +153,32 @@
                     </div>
                 </div>
                 <div class="card border-0 shadow components-section mb-4">
+                    <div class="card-body">
+                        <div class="row mb-">
+                            <div class="col-lg-12 col-sm-12">
+                                <div class="card-body">
+                                    <div class="row mb-">
+                                        <div class="mb-3">
+                                            <label for="specification">{{__('Thông số kỹ thuật')}}</label>
+                                            <textarea name="product-specification" id="specification"
+                                                      class="form-control @error('product-specification') is-invalid @enderror">
+                                                {!! $product->product_specification !!}
+                                            </textarea>
+                                            @error('product-specification')
+                                            <div class="invalid-feedback">
+                                                {{$message}}
+                                            </div>
+                                            @enderror
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card border-0 shadow components-section mb-4">
                     <div class="card-header">
                         {{__('Mô tả sản phẩm')}}
                     </div>

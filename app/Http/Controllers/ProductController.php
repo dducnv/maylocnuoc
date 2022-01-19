@@ -58,6 +58,7 @@ class ProductController extends Controller
             "product-category" => "required",
             "product-brand" => "required",
             "product-desc" => "required",
+            "product-specification" => "required",
             "product-content" => "required"
         ], [
             "product-name.required" => "Hãy nhập tên sản phẩm",
@@ -73,6 +74,7 @@ class ProductController extends Controller
             "product-category.required" => "Hãy chọn danh mục",
             "product-brand.required" => "Hãy chọn nhãn hiệu",
             "product-desc.required" => "Hãy nhập mô tả sản phẩm",
+            "product-specification.required" => "Hãy nhập thông số sản phẩm",
             "product-content.required" => "Hãy nhập mô tả sản phẩm",
         ]);
 //        dd($request->all());
@@ -93,6 +95,7 @@ class ProductController extends Controller
                     "product-category.required"=>"Hãy chọn danh mục",
                     "product-brand.required"=>"Hãy chọn nhãn hiệu",
                     "product-desc.required"=>"Hãy nhập mô tả sản phẩm",
+                    "product-specification.required" => "Hãy nhập thông số sản phẩm",
                     "product-content.required"=>"Hãy nhập mô tả sản phẩm",
                 ]
             );
@@ -114,6 +117,7 @@ class ProductController extends Controller
                     'product_price'=>$request->get('product-price'),
                     'product_desc'=>$request->get('product-desc'),
                     'product_content'=>$request->get('product-content'),
+                    'product_specification'=>$request->get('product-specification'),
                     'product_status'=>$status,
                     'category_id'=>$request->get('product-category'),
                     'brand_id'=>$request->get('product-brand'),
@@ -139,7 +143,9 @@ class ProductController extends Controller
             "product-category" => "required",
             "product-brand" => "required",
             "product-desc" => "required",
+            "product-specification" => "required",
             "product-content" => "required"
+
         ], [
             "product-name.required" => "Hãy nhập tên sản phẩm",
             "product-image.required" => "Hãy chọn ảnh sản phẩm",
@@ -154,6 +160,7 @@ class ProductController extends Controller
             "product-brand.required" => "Hãy chọn nhãn hiệu",
             "product-desc.required" => "Hãy nhập mô tả sản phẩm",
             "product-content.required" => "Hãy nhập mô tả sản phẩm",
+            "product-specification.required" => "Hãy nhập thông số sản phẩm",
         ]);
 //        dd($request->all());
         if ($validator->fails()) {
@@ -173,6 +180,7 @@ class ProductController extends Controller
                     "product-brand.required"=>"Hãy chọn nhãn hiệu",
                     "product-desc.required"=>"Hãy nhập mô tả sản phẩm",
                     "product-content.required"=>"Hãy nhập mô tả sản phẩm",
+                    "product-specification.required" => "Hãy nhập thông số sản phẩm",
                 ]
             );
         }
@@ -194,6 +202,7 @@ class ProductController extends Controller
                     'product_tags'=>$request->get('product-keywords'),
                     'product_price'=>$request->get('product-price'),
                     'product_desc'=>$request->get('product-desc'),
+                    'product_specification'=>$request->get('product-specification'),
                     'product_content'=>$request->get('product-content'),
                     'product_status'=>$status,
                     'category_id'=>$request->get('product-category'),
