@@ -36,10 +36,26 @@ mix.styles([
     'public/assets/frontend/css/style.css'
 ],'public/assets/frontend/css/app.css').version();
 mix.scripts([
-    'public/assets/frontend/js/vendor/vendor.min.js',
-    'public/assets/frontend/js/plugins/plugins.min.js',
-    'public/assets/frontend/alertify/alertify.min.js',
     'public/assets/frontend/js/main.js',
-    // 'public/assets/frontend/sweetalert2/sweetalert2.min.js',
     'public/assets/frontend/js/ajax.js'
 ],'public/assets/frontend/js/script.js').version();
+mix.scripts([
+    'public/assets/frontend/js/vendor/modernizr-3.11.7.min.js',
+    'public/assets/frontend/js/vendor/jquery-v3.6.0.min.js',
+    'public/assets/frontend/js/vendor/jquery-migrate-v3.3.2.min.js',
+    'public/assets/frontend/js/vendor/popper.min.js',
+    'public/assets/frontend/js/vendor/bootstrap.min.js',
+],'public/assets/frontend/js/vendor/vendor.js').version();
+mix.scripts([
+    'public/assets/frontend/js/plugins/slick.js',
+    'public/assets/frontend/js/plugins/jquery.syotimer.min.js',
+    'public/assets/frontend/js/plugins/jquery.instagramfeed.min.js',
+    'public/assets/frontend/js/plugins/jquery.nice-select.min.js',
+    'public/assets/frontend/js/plugins/wow.js',
+    'public/assets/frontend/js/plugins/jquery-ui-touch-punch.js',
+    'public/assets/frontend/js/plugins/jquery-ui.js',
+    'public/assets/frontend/js/plugins/magnific-popup.js',
+    'public/assets/frontend/js/plugins/sticky-sidebar.js',
+    'public/assets/frontend/js/plugins/easyzoom.js',
+    'public/assets/frontend/js/plugins/scrollup.js',
+],'public/assets/frontend/js/plugins/plugins.js').version();
