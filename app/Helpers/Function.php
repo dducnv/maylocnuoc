@@ -1,5 +1,4 @@
 <?php
-
 if (!function_exists('showCategories')) {
     function showCategories($categories, $parent_id = 0, $char = '', $selected = 0)
     {
@@ -111,23 +110,3 @@ if (!function_exists('categoryCatalog')) {
         }
     }
 }
-
-// echo '
-// <li>
-// <a href="catalog-list.html">'.$item->category_name.'
-// </a>
-// <i class="fa fa-angle-right"></i>
-// <ul>
-// </ul>
-// </li>
-// ';
-
-//if(!function_exists("separateData")){
-//    function separateTags($data){
-//        $data = explode(',',$data,);
-//
-//        foreach($data as $item){
-//            echo '<span class="badge bg-primary me-1">'.$item.'</span>';
-//        }
-//    }
-//}
