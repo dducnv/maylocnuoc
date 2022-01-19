@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 
 class DatabaseSeeder extends Seeder
@@ -14,15 +15,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-         \App\Models\User::factory(1)->create(
-             [
-                 'name' => "Admin",
-                 'email' => "admin@gmail.com",
-                 'role' => "ADMIN",
-                 'email_verified_at' => now(),
-                 'password' => 'admin@123', // password
-                 'remember_token' => Str::random(10),
-             ]
-         );
+         \App\Models\User::factory(1)->create([
+             'name' => "Admin",
+             'email' => "admin@gmail.com",
+             'email_verified_at' => now(),
+             'password' => Hash::make('admin@123'),
+             'remember_token' => Str::random(10),
+         ]);
     }
 }
