@@ -15,7 +15,6 @@
         <h2 class="h4">{{__('Danh Sách Nhãn Hiệu')}}</h2>
     </div>
 </div>
-
 <div class="row">
     <div class="col-lg-4">
         <div class="card border-0 shadow mb-4">
@@ -140,7 +139,7 @@
                                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                         </div>
                                                         <div class="modal-body">
-                                                        
+
                                                             <div class="mb-3">
                                                                 <label for="name-brand-update">{{__('Tên Nhãn Hiệu')}}</label>
                                                                 <input id="name-brand-update" value="{{$item->brand_name}}" name="name-brand-update" type="text" onkeyup="slugBrandUpdate()" class="form-control @error('name-brand-update') is-invalid @enderror" >
@@ -198,7 +197,4 @@
         </div>
     </div>
 </div>
-
-
-
 @endsection

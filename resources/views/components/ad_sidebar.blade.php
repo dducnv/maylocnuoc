@@ -1,6 +1,6 @@
 <nav class="navbar navbar-dark navbar-theme-primary px-4 col-12 d-lg-none">
-        <a class="navbar-brand me-lg-5" href="{{asset('assets/admin/')}}/index.html">
-            <img class="navbar-brand-dark" src="{{asset('assets/admin/')}}/assets/img/brand/light.svg" alt="Volt logo" /> <img class="navbar-brand-light" src="{{asset('assets/admin/')}}/assets/img/brand/dark.svg" alt="Volt logo" />
+        <a class="navbar-brand me-lg-5" href="{{asset('assets/admin/')}}l">
+            <img class="navbar-brand-dark" src="{{asset('assets/admin/')}}" alt="Volt logo" /> <img class="navbar-brand-light" src="{{asset('assets/admin/')}}" alt="Volt logo" />
         </a>
         <div class="d-flex align-items-center">
             <button class="navbar-toggler d-lg-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
@@ -128,7 +128,7 @@
                         </a>
                     </li>
                     <li class="nav-item ">
-                        <a class="nav-link" href="{{asset('assets/admin/')}}/pages/tables/bootstrap-tables.html">
+                        <a class="nav-link" href="{{asset('assets/admin/')}}">
                             <span class="sidebar-text">Thêm Sản Phẩm</span>
                         </a>
                     </li>
@@ -164,7 +164,7 @@
                         </a>
                     </li>
                     <li class="nav-item ">
-                        <a class="nav-link" href="{{asset('assets/admin/')}}/pages/tables/bootstrap-tables.html">
+                        <a class="nav-link" href="{{asset('assets/admin/')}}">
                             <span class="sidebar-text">Thêm Sản Phẩm</span>
                         </a>
                     </li>
@@ -200,44 +200,8 @@
                         </a>
                     </li>
                     <li class="nav-item ">
-                        <a class="nav-link" href="{{asset('assets/admin/')}}/pages/tables/bootstrap-tables.html">
-                            <span class="sidebar-text">Địa Chỉ</span>
-                        </a>
-                    </li>
-
-                </ul>
-                </div>
-            </li>
-            <li class="nav-item">
-                <span
-                class="nav-link  collapsed  d-flex justify-content-between align-items-center"
-                data-bs-toggle="collapse" data-bs-target="#order">
-                <span>
-                    <span class="sidebar-icon">
-                        <i class="fas icon icon-xs me-2 fa-cogs"></i>
-                    </span>
-                    <span class="sidebar-text">Thiết Lập</span>
-                </span>
-                <span class="link-arrow">
-                    <svg class="icon icon-sm" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
-                </span>
-                </span>
-                <div class="multi-level collapse "
-                role="list" id="order" aria-expanded="false">
-                <ul class="flex-column nav">
-                    <li class="nav-item ">
-                    <a class="nav-link" href="{{asset('/admin/them-san-pham')}}">
-                        <span class="sidebar-text">Thêm Sản Phẩm</span>
-                    </a>
-                    </li>
-                    <li class="nav-item ">
-                        <a class="nav-link" href="{{asset('/admin/san-pham')}}">
-                            <span class="sidebar-text">Danh Sách</span>
-                        </a>
-                    </li>
-                    <li class="nav-item ">
-                        <a class="nav-link" href="{{asset('assets/admin/')}}/pages/tables/bootstrap-tables.html">
-                            <span class="sidebar-text">Thêm Sản Phẩm</span>
+                        <a class="nav-link" href="{{asset('assets/admin/marketing')}}">
+                            <span class="sidebar-text">SEO</span>
                         </a>
                     </li>
 

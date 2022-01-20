@@ -178,9 +178,9 @@
 
             {{--            </div>--}}
             <div class="mobile-search mobile-header-padding-border-1">
-                <form class="search-form" action="#">
-                    <input type="text" placeholder="Search here…">
-                    <button class="button-search"><i class="icon-magnifier"></i></button>
+                <form class="search-form" action="@if(Request::url() !== url('/muc-luc')){{url("/muc-luc")}}@endif" method="get">
+                    <input id="search" placeholder="Tìm Kiếm" name="p" type="text">
+                    <button @if(Request::url() !== url('/muc-luc')) type="submit" @else type="button" onclick="functionAjax()" @endif class="button-search"><i class="icon-magnifier"></i></button>
                 </form>
             </div>
             <div class="mobile-menu-wrap mobile-header-padding-border-2">
@@ -209,9 +209,9 @@
             </div>
             <div class="mobile-contact-info mobile-header-padding-border-4">
                 <ul>
-                    <li><i class="icon-phone "></i> 0383665477</li>
-                    <li><i class="icon-envelope-open "></i>ducnv@gmail.com</li>
-                    <li><i class="icon-home"></i> PO Box 1622 Colins Street West Australia</li>
+                    <li><i class="icon-phone "></i> {{$seo->phone_number}}</li>
+                    <li><i class="icon-envelope-open "></i>{{$seo->email}}</li>
+                    <li><i class="icon-home"></i> {{$seo->address}}</li>
                 </ul>
             </div>
             <div class="mobile-social-icon">

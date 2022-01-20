@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 
 use App\Models\Customer;
+use App\Models\MetaSeo;
 use App\Models\OrderDetails;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -18,6 +19,7 @@ use App\Models\Product;
 class WebController extends Controller
 {
     public function index(){
+        $seo = MetaSeo::findOrFail(1);
         $slideshow = Slideshow::where('slideshow_status',0)->get();
         $products = Product::where('product_status',0)->with('Category','Brand')->orderBy('created_at', 'desc')->get();
         $category = Category::where('category_status',0)->withCount("Product")->get();
@@ -32,10 +34,12 @@ class WebController extends Controller
             'products'=>$products,
             'brand'=>$brand,
             'category'=>$category,
-            'viewed'=>$viewed
+            'viewed'=>$viewed,
+            'seo'=>$seo
         ]);
     }
     public function catalog(Request $request){
+        $seo = MetaSeo::findOrFail(1);
         $search = $request->get("p");
         $category = $request->get("cate");
         $cateID = 0;
@@ -51,7 +55,8 @@ class WebController extends Controller
             ->paginate(10);
         return view('pages.catalog',[
             'products'=>$products,
-            'search_key'=>$search
+            'search_key'=>$search,
+             'seo'=>$seo
         ]);
     }
     public function sortSearch(Request $request){
@@ -136,26 +141,35 @@ class WebController extends Controller
         return false;
     }
     public function checkout(){
+        $seo = MetaSeo::findOrFail(1);
         if(Session::has("cart")){
             $cart = Session::get("cart");
         }else{
             return redirect()->to('/');
         }
         if($cart !=null){
-            return view('pages.checkout');
+            return view('pages.checkout',[
+                'seo'=>$seo
+            ]);
         }
         return redirect()->to('/');
     }
     public function contacts(){
-        return view('pages.contacts');
+        $seo = MetaSeo::findOrFail(1);
+        return view('pages.contacts',[
+            'seo'=>$seo
+        ]);
     }
     public function confirm(){
+        $seo = MetaSeo::findOrFail(1);
         $order_completed ="";
         if(Session::has("orderCompleted")){
             $order_completed = Session::get("orderCompleted");
         }
         if($order_completed=="success"){
-            return view('pages.confirm');
+            return view('pages.confirm',[
+                'seo'=>$seo
+            ]);
         }
         return redirect()->to(404);
     }

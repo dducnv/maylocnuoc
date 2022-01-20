@@ -1,4 +1,10 @@
 @extends('layout')
+{{--meta seo--}}
+@section("page_title","Trang Chủ")
+@section("meta_desc","$seo->meta_desc")
+@section("meta_keywords","$seo->meta_keywords")
+@section("meta_image","$seo->meta_image")
+{{--.meta seo--}}
 @section('main')
     <div class="slider-area pb-60">
         <div class="container">

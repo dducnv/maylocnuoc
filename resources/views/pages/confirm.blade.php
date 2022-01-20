@@ -1,4 +1,10 @@
 @extends('layout')
+{{--meta seo--}}
+@section("page_title","Xác Nhận Đặt Hàng")
+@section("meta_desc","$seo->meta_desc")
+@section("meta_keywords","$seo->meta_keywords")
+@section("meta_image","$seo->meta_image")
+{{--.meta seo--}}
 @section('main')
     <section class="vh-100 d-flex align-items-center justify-content-center">
         <div class="container">

@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\MetaSeo;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 use App\Models\Category;
@@ -35,6 +36,7 @@ class AppServiceProvider extends ServiceProvider
             $cart_qty = 0;
 
             $categoriesView = Category::where('category_status',0)->get();
+            $seo = MetaSeo::findOrFail(1);
             $categoriesNav = Category::where('category_status',0)->get();
             $categoriesNavMobile = Category::where('category_status',0)->get();
             $cart = session()->has("cart")?session()->get("cart"):[];
@@ -48,6 +50,7 @@ class AppServiceProvider extends ServiceProvider
                 ->with('categoriesNavMobile',$categoriesNavMobile)
                 ->with('grandTotal',$grandTotal)
                 ->with('cart',$cart)
+                ->with('seo',$seo)
                 ->with('cart_qty',$cart_qty);
         });
     }

@@ -19,8 +19,9 @@
                     </div>
                     <div class="footer-list">
                         <ul>
-                            <li>Điện Thoại: 0383665477</li>
-                            <li>Địa chỉ: Hà Nội</li>
+                            <li><i class="icon-phone "></i> {{$seo->phone_number}}</li>
+                            <li><i class="icon-envelope-open "></i> {{$seo->email}}</li>
+                            <li><i class="icon-home"></i> {{$seo->address}}</li>
                         </ul>
                     </div>
                 </div>

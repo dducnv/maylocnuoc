@@ -1,4 +1,10 @@
 @extends('layout')
+{{--meta seo--}}
+@section("page_title","Liện Hệ")
+@section("meta_desc","$seo->meta_desc")
+@section("meta_keywords","$seo->meta_keywords")
+@section("meta_image","$seo->meta_image")
+{{--.meta seo--}}
 @section('main')
 <section class="container stylization maincont">
     <div class="breadcrumb-area bg-gray">

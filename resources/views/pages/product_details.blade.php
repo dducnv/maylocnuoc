@@ -1,4 +1,10 @@
 @extends('layout')
+{{--meta seo--}}
+@section("page_title","$product->product_name")
+@section("meta_desc","$product->product_desc")
+@section("meta_keywords","$product->product_tags")
+@section("meta_image","$product->product_image")
+{{--.meta seo--}}
 @section('main')
     @php
     $images = explode(",",$product->product_gallery)
