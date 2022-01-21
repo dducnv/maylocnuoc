@@ -63,7 +63,7 @@
                                 <div id="shop-1" class="tab-pane active">
                                     <div class="row">
                                         @forelse($products as $item)
-                                            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
+                                            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-6">
                                                 <div class="product-plr-1">
                                                     <div class="single-product-wrap mb-60">
                                                         <div class="product-img product-img-zoom mb-15">
