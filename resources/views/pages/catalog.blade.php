@@ -24,7 +24,7 @@
                 <div class="col-lg-9">
                     @if(!$search_key == null)
                         <p><i class="icon_search"></i> Kết Quả Tìm Kiếm Cho Từ Khoá "<span
-                                class="text-danger" >{{$search_key}}</span>"</p>
+                                class="text-danger">{{$search_key}}</span>"</p>
                     @endif
                     <div id="search-key">
 
@@ -32,8 +32,8 @@
                     <div class="shop-topbar-wrapper">
                         <div class="shop-topbar-left">
                             <div class="view-mode nav">
-                                <a href="#shop-1" data-toggle="tab"><i class="icon-grid"></i></a>
-                                <a class="active" href="#shop-2" data-toggle="tab"><i class="icon-menu"></i></a>
+                                <a  class="active" href="#shop-1" data-toggle="tab"><i class="icon-grid"></i></a>
+                                <a  href="#shop-2" data-toggle="tab"><i class="icon-menu"></i></a>
                             </div>
                             <p>Đang Hiển Thị 1 - 20 Của 30 Kết Quả </p>
                         </div>
@@ -229,11 +229,11 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            @empty
-                                                <div class="text-center">
-                                                    <span class="text-center">Không có sản phẩm nào</span>
-                                                </div>
-                                            @endforelse
+                                        @empty
+                                            <div class="text-center">
+                                                <span class="text-center">Không có sản phẩm nào</span>
+                                            </div>
+                                        @endforelse
                                     </div>
                                 </div>
                                 <div id="shop-2" class="tab-pane active">
@@ -272,7 +272,8 @@
                                                         </div>
                                                         <p>{!! $item->product_desc !!}</p>
                                                         <div class="product-list-action">
-                                                            <button onclick="addToCart({{$item->id}})" title="Thêm Giỏ Hàng"><i
+                                                            <button onclick="addToCart({{$item->id}})"
+                                                                    title="Thêm Giỏ Hàng"><i
                                                                     class="icon-basket-loaded"></i>
                                                             </button>
                                                         </div>
@@ -395,7 +396,8 @@
                             <h4 class="sidebar-widget-title">Tìm Kiếm </h4>
                             <div class="sidebar-search">
                                 <form class="sidebar-search-form" action="#">
-                                    <input type="text" onkeyup="functionAjax()" id="search-cate" placeholder="Nhập Từ Khoá...">
+                                    <input type="text" onkeyup="functionAjax()" id="search-cate"
+                                           placeholder="Nhập Từ Khoá...">
                                 </form>
                             </div>
                         </div>
