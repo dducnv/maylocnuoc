@@ -21392,4 +21392,11 @@ h3.cart-page-title {
         display: none;
     }
 }
-
+.image-quickView{
+    position: relative;
+}
+.image-quickView img{
+    width:100%;
+    height: auto;
+    object-fit: cover;
+}

@@ -51,9 +51,9 @@
                                     <span>5.0</span>
                                 </div>
                             </div>
-                            <div class="product-review-order">
-                                <span>242 đơn đã đặt</span>
-                            </div>
+{{--                            <div class="product-review-order">--}}
+{{--                                <span>242 đơn đã đặt</span>--}}
+{{--                            </div>--}}
                         </div>
                         <p>{!! $product->product_desc !!}</p>
                         <div class="pro-details-quality">
@@ -64,9 +64,7 @@
                         </div>
                         <div class="product-details-meta">
                             <ul>
-                                <li><span>Categories:</span> <a href="#">Woman,</a> <a href="#">Dress,</a> <a href="#">T-Shirt</a>
-                                </li>
-                                <li><span>Tag: </span> <a href="#">Fashion,</a> <a href="#">Mentone</a> , <a href="#">Texas</a>
+                                <li><span>Danh Mục:</span> <a href="">{{$product->category->category_name}}</a>
                                 </li>
                             </ul>
                         </div>
