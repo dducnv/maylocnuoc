@@ -60,7 +60,7 @@
                     <div id="product-res">
                         <div class="shop-bottom-area">
                             <div class="tab-content jump">
-                                <div id="shop-1" class="tab-pane">
+                                <div id="shop-1" class="tab-pane active">
                                     <div class="row">
                                         @forelse($products as $item)
                                             <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
@@ -235,7 +235,7 @@
                                         @endforelse
                                     </div>
                                 </div>
-                                <div id="shop-2" class="tab-pane active">
+                                <div id="shop-2" class="tab-pane ">
                                     @forelse($products as $item)
                                         <div class="shop-list-wrap mb-30">
                                             <div class="row">
