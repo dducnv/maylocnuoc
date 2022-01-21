@@ -151,8 +151,17 @@
                                                                             class="product-details-content quickview-content">
                                                                             <h2>{{$item->product_name}}</h2>
                                                                             <div class="product-ratting-review-wrap">
-                                                                                <div class="product-review-order">
-                                                                                    <span>242 orders</span>
+                                                                                <div class="product-ratting-digit-wrap">
+                                                                                    <div class="product-ratting">
+                                                                                        <i class="icon_star"></i>
+                                                                                        <i class="icon_star"></i>
+                                                                                        <i class="icon_star"></i>
+                                                                                        <i class="icon_star"></i>
+                                                                                        <i class="icon_star"></i>
+                                                                                    </div>
+                                                                                    <div class="product-digit">
+                                                                                        <span>5.0</span>
+                                                                                    </div>
                                                                                 </div>
                                                                             </div>
                                                                             <p>{!! $item->product_desc !!}</p>
@@ -162,7 +171,7 @@
                                                                             </div>
 
                                                                             <div class="pro-details-quality">
-                                                                                <span>Quantity:</span>
+                                                                                <span>Số Lượng:</span>
                                                                                 <div class="cart-plus-minus">
                                                                                     <form>
                                                                                         <label>
@@ -292,8 +301,17 @@
                                                                         class="product-details-content quickview-content">
                                                                         <h2>{{$item->product_name}}</h2>
                                                                         <div class="product-ratting-review-wrap">
-                                                                            <div class="product-review-order">
-                                                                                <span>242 orders</span>
+                                                                            <div class="product-ratting-digit-wrap">
+                                                                                <div class="product-ratting">
+                                                                                    <i class="icon_star"></i>
+                                                                                    <i class="icon_star"></i>
+                                                                                    <i class="icon_star"></i>
+                                                                                    <i class="icon_star"></i>
+                                                                                    <i class="icon_star"></i>
+                                                                                </div>
+                                                                                <div class="product-digit">
+                                                                                    <span>5.0</span>
+                                                                                </div>
                                                                             </div>
                                                                         </div>
                                                                         <p>{!! $item->product_desc !!}</p>
@@ -303,7 +321,7 @@
                                                                         </div>
 
                                                                         <div class="pro-details-quality">
-                                                                            <span>Quantity:</span>
+                                                                            <span>Số Lượng:</span>
                                                                             <div class="cart-plus-minus">
                                                                                 <form>
                                                                                     <label>
