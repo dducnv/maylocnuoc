@@ -69,9 +69,9 @@ var editor_config = {
     language: 'vi_VN',
     relative_urls: false,
     plugins: [
-        "table advlist autolink lists image charmap print preview hr anchor pagebreak",
+        "table advlist autolink lists image charmap print preview hr anchor pagebreak fullscreen",
     ],
-    toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image media",
+    toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image media |fullscreen",
     file_picker_callback: function(callback, value, meta) {
         var x = window.innerWidth || document.documentElement.clientWidth || document.getElementsByTagName('body')[0].clientWidth;
         var y = window.innerHeight || document.documentElement.clientHeight || document.getElementsByTagName('body')[0].clientHeight;
@@ -97,13 +97,6 @@ var editor_config = {
     }
 };
 tinymce.init({
-    selector: '#desc',
-    language: 'vi_VN',
-    toolbar: " styleselect | bold italic | alignleft | bullist numlist outdent indent | link image media",
-    menubar: false,
-
-});
-tinymce.init({
     plugins: [
         "table",
     ],
@@ -119,20 +112,7 @@ tinymce.init({
 //     menubar: false,
 //
 // });
-tinymce.init({
-    selector: '#category_desc_ex',
-    language: 'vi_VN',
-    toolbar: false,
-    menubar: false,
 
-});
-tinymce.init({
-    selector: '#category_desc_ex_edit',
-    language: 'vi_VN',
-    toolbar: false,
-    menubar: false,
-
-});
 tinymce.init(editor_config);
 //file manager
 var file_manager = "/admin/quan-ly-tap-tin";

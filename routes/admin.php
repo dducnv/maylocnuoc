@@ -43,5 +43,6 @@ Route::middleware(["auth","admin"])->group(function () {
 
 //other route
     Route::get('/marketing',[MarketingController::class,'marketing']);
+    Route::post('/marketing/save',[MarketingController::class,'marketing_save']);
 
 });
