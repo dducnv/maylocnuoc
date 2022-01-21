@@ -169,7 +169,6 @@
                                                                                 <span class="new-price">@money($item->product_price)</span>
                                                                                 <span class="old-price">$95.72</span>
                                                                             </div>
-
                                                                             <div class="pro-details-quality">
                                                                                 <span>Số Lượng:</span>
                                                                                 <div class="cart-plus-minus">
