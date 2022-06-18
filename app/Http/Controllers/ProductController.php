@@ -7,6 +7,7 @@ use App\Models\Brand;
 use App\Models\Category;
 use App\Models\Product;
 use Brian2694\Toastr\Facades\Toastr;
+use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -47,11 +48,13 @@ class ProductController extends Controller
      */
     public function save_product(Request $request)
     {
-//        dd($request->all());
+
+//        dd($request->get('product-gallery'));
         $validator = Validator::make($request->all(), [
             "product-name" => "required",
-            "thumbnail" => "required",
+            "thumbnail" => ["required","image","mimes:jpeg,png,jpg,gif,svg","max:2048"],
             "product-gallery" => "required",
+            'product-gallery.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             "product_slug" => ["required", "unique:products", "alpha_dash"],
             "product-keywords" => "required",
             "product-price" => ["required", "min:0", "numeric"],
@@ -78,6 +81,7 @@ class ProductController extends Controller
             "product-content.required" => "Hãy nhập mô tả sản phẩm",
         ]);
 //        dd($request->all());
+        $productGallery = [];
         if ($validator->fails()) {
             Toastr::error('Lỗi Dữ Liệu Nhập Lại ¯\_(ツ)_/¯', 'Thông Báo', ["positionClass" => "toast-top-right"]);
             $validator->validate(
@@ -106,12 +110,23 @@ class ProductController extends Controller
             }else{
                 $status = 1;
             }
-//            dd($request->all());
+
             try{
+               $thumbnail = Cloudinary::upload($request->file('thumbnail')->getRealPath(), [
+                    'folder' =>$request->get('product_slug'),
+                ])->getSecurePath();
+
+                foreach($request->file('product-gallery') as $file)
+                {
+                    $gallery = Cloudinary::upload($file->getRealPath(), [
+                        'folder' =>$request->get('product_slug').'/gallery',
+                    ])->getSecurePath();
+                    $productGallery[] = $gallery;
+                }
                 Product::create([
                     'product_name'=>$request->get('product-name'),
-                    'product_image'=>$request->get('thumbnail'),
-                    'product_gallery'=>$request->get('product-gallery'),
+                    'product_image'=>$thumbnail,
+                    'product_gallery'=>json_encode($productGallery),
                     'product_slug'=>$request->get('product_slug'),
                     'product_tags'=>$request->get('product-keywords'),
                     'product_price'=>$request->get('product-price'),
@@ -135,8 +150,6 @@ class ProductController extends Controller
 //        dd($request->all());
         $validator = Validator::make($request->all(), [
             "product-name" => "required",
-            "thumbnail" => "required",
-            "product-gallery" => "required",
             "product_slug" => ["required", "alpha_dash"],
             "product-keywords" => "required",
             "product-price" => ["required", "min:0", "numeric"],
@@ -184,20 +197,42 @@ class ProductController extends Controller
                 ]
             );
         }
-
+            $productGalleryArray= [];
             if($request ->has('product-status')){
                 $status = 0;
             }else{
                 $status = 1;
             }
 
+
             $product = Product::findOrFail($id);
 //            dd($request->all());
             try{
+                if($request->get('thumbnail') == null){
+                    $productThumbnail = $request->get('thumbnail-old');
+                }else{
+                    $thumbnail = Cloudinary::upload($request->file('thumbnail')->getRealPath(), [
+                        'folder' =>$request->get('product_slug'),
+                    ])->getSecurePath();
+                    $productThumbnail = $thumbnail;
+                }
+
+                if($request->get('product-gallery') == null){
+                    $productGallery = $request->get('product-gallery-old');
+                }else{
+                    foreach($request->file('product-gallery') as $file)
+                    {
+                        $gallery = Cloudinary::upload($file->getRealPath(), [
+                            'folder' =>$request->get('product_slug').'/gallery',
+                        ])->getSecurePath();
+                        $productGalleryArray[] = $gallery;
+                    }
+                    $productGallery = json_encode($productGalleryArray);
+                }
                 $product->update([
                     'product_name'=>$request->get('product-name'),
-                    'product_image'=>$request->get('thumbnail'),
-                    'product_gallery'=>$request->get('product-gallery'),
+                    'product_image'=>$productThumbnail,
+                    'product_gallery'=>$productGallery,
                     'product_slug'=>$request->get('product_slug'),
                     'product_tags'=>$request->get('product-keywords'),
                     'product_price'=>$request->get('product-price'),

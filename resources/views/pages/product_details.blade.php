@@ -7,7 +7,7 @@
 {{--.meta seo--}}
 @section('main')
     @php
-    $images = explode(",",$product->product_gallery)
+    $images = json_decode($product->product_gallery,true)
     @endphp
     <div class="product-details-area pt-120 pb-115">
         <div class="container">
@@ -38,6 +38,8 @@
                 <div class="col-lg-6 col-md-12">
                     <div class="product-details-content pro-details-content-mt-md">
                         <h2>{{$product->product_name}}</h2>
+                        <h6 class="mt-3"><span class="font-weight-bold ">Danh Mục:</span> <a class="text-danger" href="">{{$product->category->category_name}}</a>
+                        </h6>
                         <div class="product-ratting-review-wrap">
                             <div class="product-ratting-digit-wrap">
                                 <div class="product-ratting">
@@ -51,27 +53,28 @@
                                     <span>5.0</span>
                                 </div>
                             </div>
-{{--                            <div class="product-review-order">--}}
-{{--                                <span>242 đơn đã đặt</span>--}}
-{{--                            </div>--}}
+                           <div class="product-review-order">
+                               <span>{{$product->product_views}} Khách hàng đã xem</span>
+                         </div>
                         </div>
                         <p>{!! $product->product_desc !!}</p>
+                        <hr/>
                         <div class="pro-details-quality">
                             <span>Số Lượng:</span>
                             <div class="cart-plus-minus">
                                 <input class="cart-plus-minus-box" id="qty-{{$product->id}}" type="text" name="qtybutton" value="1">
                             </div>
                         </div>
-                        <div class="product-details-meta">
+                        {{-- <div class="product-details-meta">
                             <ul>
                                 <li><span>Danh Mục:</span> <a href="">{{$product->category->category_name}}</a>
                                 </li>
                             </ul>
-                        </div>
+                        </div> --}}
                         <div class="pro-details-action-wrap">
                             <div class="pro-details-add-to-cart">
                                 @csrf
-                                <a title="Add to Cart" onclick="addToCart({{$product->id}})" href="javascript:void(0)">Thêm Giỏ Hàng </a>
+                                <a class="bg-danger" title="Add to Cart" onclick="addToCart({{$product->id}})" href="javascript:void(0)">Thêm Giỏ Hàng </a>
                             </div>
                             <div class="pro-details-action">
                                 <a class="social" title="Social" href="#"><i class="icon-share"></i></a>

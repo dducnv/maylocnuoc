@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Brand;
 use Brian2694\Toastr\Facades\Toastr;
+use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -49,8 +50,11 @@ class BrandController extends Controller
             $status = 1;
         }
         try{
+            $logo = Cloudinary::upload($request->file('brand-logo')->getRealPath(), [
+                'folder' =>'nhanhieu/'.$request->get('brand_slug'),
+            ])->getSecurePath();
             Brand::create([
-                'brand_logo'=>$request->get('brand-logo'),
+                'brand_logo'=>$logo,
                 'brand_name'=>$request->get('name-brand'),
                 'brand_slug'=>$request->get('brand_slug'),
                 'brand_status'=>$status,

@@ -12,7 +12,7 @@
             </div>
         </div>
     </div>
-    <form action="{{url('admin/san-pham/luu-san-pham')}}" method="post">
+    <form action="{{url('admin/san-pham/luu-san-pham')}}" method="post" enctype="multipart/form-data">
         @csrf
         <div class="row">
             <div class="col-md-4 col-xl-4 col-sm-12 col-lg-4 col-sm-4  mb-4">
@@ -20,12 +20,9 @@
                     <div class="card-body">
                         <label for="thumbnail">{{__('Ảnh sản phẩm (Tối đa 1 ảnh)')}}</label>
                         <div class="input-group mb-3">
-                            <a data-input="thumbnail" data-preview="thumbnail-preview" class="input-group-text"
-                               id="thumbnail-img">
-                                {{__('Chọn')}}
-                            </a>
-                            <input readonly="readonly" id="thumbnail"
-                                   class="form-control @error('thumbnail') is-invalid @enderror" type="text"
+                            <input id="thumbnail"
+                                   class="form-control @error('thumbnail') is-invalid @enderror" type="file"
+                                   accept="image/*"
                                    name="thumbnail">
                         </div>
                         @error('thumbnail')
@@ -37,13 +34,13 @@
                         </div>
                         <label for="thumbnail-gallery">{{__('Ảnh chi tiết sản phẩm (Không giới hạn)')}}</label>
                         <div class="input-group mb-3">
-                            <a data-input="thumbnail-gallery" data-preview="gallery-preview" class="input-group-text"
-                               id="gallery-img">
-                                {{__('Chọn')}}
-                            </a>
-                            <input readonly="readonly" id="thumbnail-gallery"
-                                   class="form-control @error('product-gallery') is-invalid @enderror" type="text"
-                                   name="product-gallery">
+                            <div class="input-group control-group increment">
+
+                                <input id="thumbnail-gallery"
+                                       class="form-control @error('product-gallery') is-invalid @enderror" type="file"
+                                       accept="image/*" multiple
+                                       name="product-gallery[]">
+                            </div>
                         </div>
                         @error('product-gallery')
                         <div class="invalid-feedback">
@@ -62,8 +59,6 @@
                                 <label class="form-check-label" for="flexSwitchCheckDefault">{{__('Hiển Thị')}}</label>
                             </div>
                         </div>
-
-
                     </div>
                 </div>
             </div>
@@ -110,7 +105,7 @@
                                 </div>
                                 <div class="mb-4">
                                     <label for="product-price">{{__('Giá sản phẩm')}}</label>
-                                    <input name="product-price" type="text"
+                                    <input name="product-price" type="number"
                                            class="form-control @error('product-price') is-invalid @enderror"
                                            id="product-price">
                                     @error('product-price')
@@ -124,7 +119,7 @@
                                     <select name="product-category" id="product-category"
                                             class="form-select @error('product-category') is-invalid @enderror">
                                         <option value="" selected> {{__('Chọn danh mục')}}</option>
-                                        {!! showCategories($categories,0) !!}
+                                        {!!showCategories($categories,0) !!}
                                     </select>
                                     @error('product-category')
                                     <div class="invalid-feedback">
@@ -194,8 +189,8 @@
                         <div class="row mb-">
                             <div class="col-lg-12 col-sm-12">
                                 <div class="mb-3">
-                                    <label for="desc">{{__('Mô tả')}}</label>
-                                    <textarea name="product-desc"
+                                    <label for="desc-pro">{{__('Mô tả')}}</label>
+                                    <textarea id="desc-pro" name="product-desc"
                                               class="form-control @error('product-desc') is-invalid @enderror"></textarea>
                                     @error('product-desc')
                                     <div class="invalid-feedback">

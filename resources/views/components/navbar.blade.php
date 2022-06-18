@@ -28,7 +28,7 @@
                 <div class="row align-items-center">
                     <div class="col-xl-3 col-lg-3">
                         <div class="logo">
-                            <a href="{{asset('/')}}">HABECO</a>
+                            <a href="{{asset('/')}}">HABECOM</a>
                         </div>
                     </div>
                     <div class="col-xl-8 col-lg-8">
@@ -65,12 +65,12 @@
                 </div>
             </div>
         </div>
-        <div class="header-bottom">
-            <div class="container">
+        <div class="header-bottom bg-primary mt-3">
+            <div class="container text-white">
                 <div class="row align-items-center">
                     <div class="col-lg-3">
                         <div class="main-categori-wrap">
-                            <a class="categori-show" href="#"><i class="lnr lnr-menu"></i> Tất Cả Danh Mục <i
+                            <a class="categori-show text-white" href="#"><i class="lnr lnr-menu"></i> Tất Cả Danh Mục <i
                                     class="icon-arrow-down icon-right"></i></a>
                             <div class="category-menu categori-hide"
                                  style="{{ Request::url() == url('/')  ? '' : 'display:none' }}">
@@ -81,20 +81,15 @@
                         </div>
                     </div>
                     <div class="col-lg-6">
-                        <div class="main-menu main-menu-padding-1 main-menu-font-size-14 main-menu-lh-2">
+                        <div class="main-menu text-white main-menu-padding-1 main-menu-font-size-14 main-menu-lh-2">
                             <nav>
                                 <ul>
-                                    <li><a href="{{asset('/')}}">Trang Chủ</a></li>
-                                    <li><a href="{{asset('/muc-luc')}}">Sản Phẩm</a></li>
-                                    <li><a href="{{asset('/lien-he')}}">Liên Hệ</a></li>
-                                    <li><a href="{{asset('/gioi-thieu')}}">Giới Thiệu</a></li>
+                                    <li><a class="text-white uppercase {{ Request::url() == url('/')  ? 'active' : '' }}" href="{{asset('/')}}">Trang Chủ</a></li>
+                                    <li><a class="text-white uppercase {{ Request::url() == url('/muc-luc')  ? 'active' : '' }}" href="{{asset('/muc-luc')}}">Sản Phẩm</a></li>
+                                    <li><a class="text-white uppercase {{ Request::url() == url('/lien-he')  ? 'active' : '' }}" href="{{asset('/lien-he')}}">Liên Hệ</a></li>
+                                    {{-- <li><a class="text-white uppercase {{ Request::url() == url('/gioi-thieu')  ? 'active' : '' }}" href="{{asset('/gioi-thieu')}}">Giới Thiệu</a></li> --}}
                                 </ul>
                             </nav>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="hotline">
-                            <p><a href="#"><i class="icon-call-end"></i>0383665477</a></p>
                         </div>
                     </div>
                 </div>
@@ -190,7 +185,7 @@
                         <li><a href="{{asset('/')}}">Trang Chủ</a></li>
                         <li><a href="{{asset('/muc-luc')}}">Sản Phẩm</a></li>
                         <li><a href="{{asset('/lien-he')}}">Liên Hệ</a></li>
-                        <li><a href="{{asset('/gioi-thieu')}}">Giới Thiệu</a></li>
+                        {{-- <li><a href="{{asset('/gioi-thieu')}}">Giới Thiệu</a></li> --}}
                     </ul>
                 </nav>
                 <!-- mobile menu end -->

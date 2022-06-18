@@ -32,7 +32,7 @@
                             </div>
                             <div class="service-content-2">
                                 <h3>Miễn Phí Giao Hàng</h3>
-                                <p>Đơn Từ 3,000,000VNĐ</p>
+                                <p>Đơn dưới 5,000,000VNĐ</p>
                             </div>
                         </div>
                     </div>
@@ -99,7 +99,7 @@
                                     <a href="{{url('/chi-tiet',['slug'=>$item->product_slug])}}">
                                         <img src="{{$item->product_image}}" alt="">
                                     </a>
-                                    <span class="pro-badge left bg-red">-40%</span>
+                                    {{-- <span class="pro-badge left bg-red">-40%</span> --}}
                                 </div>
                                 <div class="product-content-wrap-3">
                                     <div class="product-content-categories">
@@ -120,7 +120,7 @@
                                     </div>
                                     <div class="product-price-4">
                                         <span class="new-price">@money($item->product_price)</span>
-                                        <span class="old-price">$42.85</span>
+                                        {{-- <span class="old-price">$42.85</span> --}}
                                     </div>
                                 </div>
                                 <div class="product-content-wrap-3 product-content-position-2">
@@ -140,7 +140,7 @@
                                     </div>
                                     <div class="product-price-4">
                                         <span class="new-price">@money($item->product_price)</span>
-                                        <span class="old-price">$42.85</span>
+                                        {{-- <span class="old-price">$42.85</span> --}}
                                     </div>
                                     <div class="pro-add-to-cart-2">
                                         <button onclick="addToCart({{$item->id}})" title="Add to Cart">Thêm Giỏ Hàng
@@ -161,7 +161,7 @@
                 @if($cate_item->product_count > 0 )
                     <div class="section-title-btn-wrap border-bottom-3 mb-50 pb-20">
                         <div class="section-title-deal-wrap">
-                            <div class="section-title-3">
+                            <div class="section-title-3 text-uppercase">
                                 <h2>{{$cate_item->category_name}}</h2>
                             </div>
                         </div>
@@ -180,7 +180,7 @@
                                                 <a href="{{url('/chi-tiet',['slug'=>$prod_item->product_slug])}}">
                                                     <img src="{{$prod_item->product_image}}" alt="">
                                                 </a>
-                                                <span class="pro-badge left bg-red">-40%</span>
+                                                {{-- <span class="pro-badge left bg-red">-40%</span> --}}
                                                 <div class="product-action-2 tooltip-style-2">
                                                     <button title="Xem Nhanh" data-toggle="modal"
                                                             data-target="#product-{{$prod_item->id}}"><i
@@ -206,7 +206,7 @@
                                                     <span>(4)</span>
                                                 </div>
                                                 <div class="product-price-4">
-                                                    <span>@money($prod_item->product_price)</span>
+                                                    <span class="new-price">@money($prod_item->product_price)</span>
                                                 </div>
                                             </div>
                                             <div
@@ -229,7 +229,7 @@
                                                     <span>(4)</span>
                                                 </div>
                                                 <div class="product-price-4">
-                                                    <span>@money($prod_item->product_price)</span>
+                                                    <span class="new-price">@money($prod_item->product_price)</span>
                                                 </div>
                                                 <div class="pro-add-to-cart-2">
                                                     <button onclick="addToCart({{$prod_item->id}})">Thêm Giỏ Hàng
@@ -272,11 +272,14 @@
                                                                             <span>5.0</span>
                                                                         </div>
                                                                     </div>
+                                                                    <div class="product-review-order">
+                                                                        <span>{{$prod_item->product_views}} Khách hàng đã xem</span>
+                                                                  </div>
                                                                 </div>
                                                                 <p>{!! $prod_item->product_desc !!}</p>
                                                                 <div class="pro-details-price">
                                                                     <span class="new-price">@money($prod_item->product_price)</span>
-                                                                    <span class="old-price">$95.72</span>
+                                                                    {{-- <span class="old-price">$95.72</span> --}}
                                                                 </div>
 
                                                                 <div class="pro-details-quality">

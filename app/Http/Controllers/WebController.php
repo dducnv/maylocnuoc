@@ -105,6 +105,8 @@ class WebController extends Controller
         $prod = [];
         $products = Product::where('product_status',0)->with('Category','Brand')->get();
         $product = Product::where('product_slug',$slug)->where('product_status',0)->with('Category','Brand')->first();
+        $product->product_views = $product->product_views + 1;
+        $product->save();
         if(Session::has("viewed")){
             $viewed = Session::get("viewed");
         }

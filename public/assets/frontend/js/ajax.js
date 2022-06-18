@@ -55,49 +55,57 @@ function removeAllCart() {
     });
 }
 function checkOut(){
-    var _token = $("input[name='_token']").val();
-    var fullName = $("input[name='fullName']#fullName").val();
-    var phoneNumber = $("input[name='phoneNumber']#phoneNumber").val();
-    var email = $("input[name='emailAddress']#emailAddress").val();
-    var address = $("input[name='Address']#Address").val();
-    var message = $("textarea[name='message']#noteCheckout").val();
-
-    $.ajax({
-        url: "/checkout",
-        type:'POST',
-        data: {_token:_token, fullName:fullName, phoneNumber:phoneNumber, email:email, address:address,message:message},
-        beforeSend: function() {
-            swal({
-                title: "Đang Tải...",
-                text: "Xin Hãy Chờ!",
-                imageUrl:hostname+"/assets/frontend/images/load.gif",
-                showCancelButton: false,
-                showConfirmButton: false
-            });
-        },
-        success: function(data) {
-            if($.isEmptyObject(data.error)){
-                document.location.href="/xac-nhan";
-            }else{
-                sweetAlert("Lỗi...","Vui Lòng Nhập Đầy Đủ Thông Tin!","error")
-                printErrorMsg(data.error);
-            }
-        },
-        error:function (data){
-            Swal.fire({
-                icon: 'error',
-                title: 'Oops...',
-                text: 'Something went wrong!',
-            })
-        }
+    swal({
+        title: "Thông Báo!",
+        text: "Vui lòng liên hệ đến  <b class='font-weight-bold'> Nguyễn Văn Tuân </b> </br> SĐT:<b class='text-danger mt-1'>0934616287</b> </br> để được hỗ trợ",
+        html:true,
+        // imageUrl:hostname+"/assets/frontend/images/load.gif",
+        showCancelButton: false,
+        showConfirmButton: true
     });
-    function printErrorMsg (msg) {
-        $(".print-error-msg").find("ul").html('');
-        $(".print-error-msg").css('display','block');
-        $.each( msg, function( key, value ) {
-            $(".print-error-msg").find("ul").append('<li>'+value+'</li>');
-        });
-    }
+    // var _token = $("input[name='_token']").val();
+    // var fullName = $("input[name='fullName']#fullName").val();
+    // var phoneNumber = $("input[name='phoneNumber']#phoneNumber").val();
+    // var email = $("input[name='emailAddress']#emailAddress").val();
+    // var address = $("input[name='Address']#Address").val();
+    // var message = $("textarea[name='message']#noteCheckout").val();
+
+    // $.ajax({
+    //     url: "/checkout",
+    //     type:'POST',
+    //     data: {_token:_token, fullName:fullName, phoneNumber:phoneNumber, email:email, address:address,message:message},
+    //     beforeSend: function() {
+    //         swal({
+    //             title: "Đang Tải...",
+    //             text: "Xin Hãy Chờ!",
+    //             imageUrl:hostname+"/assets/frontend/images/load.gif",
+    //             showCancelButton: false,
+    //             showConfirmButton: false
+    //         });
+    //     },
+    //     success: function(data) {
+    //         if($.isEmptyObject(data.error)){
+    //             document.location.href="/xac-nhan";
+    //         }else{
+    //             sweetAlert("Lỗi...","Vui Lòng Nhập Đầy Đủ Thông Tin!","error")
+    //             printErrorMsg(data.error);
+    //         }
+    //     },
+    //     error:function (data){
+    //         Swal.fire({
+    //             icon: 'error',
+    //             title: 'Oops...',
+    //             text: 'Something went wrong!',
+    //         })
+    //     }
+    // });
+    // function printErrorMsg (msg) {
+    //     $(".print-error-msg").find("ul").html('');
+    //     $(".print-error-msg").css('display','block');
+    //     $.each( msg, function( key, value ) {
+    //         $(".print-error-msg").find("ul").append('<li>'+value+'</li>');
+    //     });
+    // }
 }
 function functionAjax(){
     var search = "";

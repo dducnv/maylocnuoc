@@ -8,6 +8,7 @@
                 @yield('main')
             <x-footer></x-footer>
         </div>
+        <x-contact></x-contact>
     </body>
  <x-script></x-script>
 </html>

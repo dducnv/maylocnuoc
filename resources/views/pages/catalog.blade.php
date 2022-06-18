@@ -70,7 +70,7 @@
                                                             <a href="{{url('/chi-tiet',['slug'=>$item->product_slug])}}">
                                                                 <img src="{{$item->product_image}}" alt="">
                                                             </a>
-                                                            <span class="pro-badge left bg-red">-40%</span>
+                                                            {{-- <span class="pro-badge left bg-red">-40%</span> --}}
                                                             <div class="product-action-2 tooltip-style-2">
                                                                 <button title="Xem Nhanh" data-toggle="modal"
                                                                         data-target="#product-{{$item->id}}"><i
@@ -93,10 +93,11 @@
                                                                     <i class="icon_star"></i>
                                                                     <i class="icon_star"></i>
                                                                 </div>
-                                                                <span>(4)</span>
+                                                                <span>(5)</span>
                                                             </div>
-                                                            <div class="product-price-4">
-                                                                <span>@money($item->product_price)</span>
+                                                            
+                                                            <div class="product-price-4 text-danger">
+                                                                <span class="new-price">@money($item->product_price)</span>
                                                             </div>
                                                         </div>
                                                         <div
@@ -117,8 +118,8 @@
                                                                     <i class="icon_star"></i>
                                                                 </div>
                                                             </div>
-                                                            <div class="product-price-4">
-                                                                <span>@money($item->product_price)</span>
+                                                            <div class="product-price-4 text-danger">
+                                                                <span class="new-price">@money($item->product_price)</span>
                                                             </div>
                                                             <div class="pro-add-to-cart-2">
                                                                 <button onclick="addToCart({{$item->id}})">Thêm Giỏ Hàng
@@ -163,11 +164,14 @@
                                                                                         <span>5.0</span>
                                                                                     </div>
                                                                                 </div>
+                                                                                 <div class="product-review-order">
+                                                                                <span>{{$item->product_views}} Khách hàng đã xem</span>
+                                                                          </div>
                                                                             </div>
                                                                             <p>{!! $item->product_desc !!}</p>
                                                                             <div class="pro-details-price">
                                                                                 <span class="new-price">@money($item->product_price)</span>
-                                                                                <span class="old-price">$95.72</span>
+                                                                                {{-- <span class="old-price">$95.72</span> --}}
                                                                             </div>
                                                                             <div class="pro-details-quality">
                                                                                 <span>Số Lượng:</span>
@@ -258,7 +262,7 @@
                                                         </h3>
                                                         <div class="pro-list-price">
                                                             <span class="new-price">@money($item->product_price)</span>
-                                                            <span class="old-price">$45.80</span>
+                                                            {{-- <span class="old-price">$45.80</span> --}}
                                                         </div>
                                                         <div class="product-list-rating-wrap">
                                                             <div class="product-list-rating">
@@ -313,11 +317,14 @@
                                                                                     <span>5.0</span>
                                                                                 </div>
                                                                             </div>
+                                                                            <div class="product-review-order">
+                                                                                <span>{{$item->product_views}} Khách hàng đã xem</span>
+                                                                          </div>
                                                                         </div>
                                                                         <p>{!! $item->product_desc !!}</p>
                                                                         <div class="pro-details-price">
                                                                             <span class="new-price">@money($item->product_price)</span>
-                                                                            <span class="old-price">$95.72</span>
+                                                                            {{-- <span class="old-price">$95.72</span> --}}
                                                                         </div>
 
                                                                         <div class="pro-details-quality">
@@ -336,7 +343,8 @@
                                                                         </div>
                                                                         <div class="product-details-meta">
                                                                             <ul>
-                                                                                <li><span>Danh Mục:</span> <a
+                                                                                <li><span >Danh Mục:</span> <a
+                                                                                    class="text-danger"
                                                                                         href="#">{{$item->category->category_name}}</a>
                                                                                 </li>
                                                                             </ul>

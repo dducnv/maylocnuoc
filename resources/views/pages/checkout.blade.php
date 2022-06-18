@@ -93,7 +93,7 @@
                                         </ul>
                                     </div>
                                 </div>
-                                <div class="payment-method">
+                                {{-- <div class="payment-method">
                                     <div class="pay-top sin-payment">
                                         <input id="payment_method_1" class="input-radio" type="radio" value="cheque" checked="checked" name="payment_method">
                                         <label for="payment_method_1">Thanh Toán Khi Nhận Hàng</label>
@@ -108,7 +108,7 @@
                                             <p>Make your payment directly into our bank account. Please use your Order ID as the payment reference.</p>
                                         </div>
                                     </div>
-                                </div>
+                                </div> --}}
                             </div>
                             <div class="Place-order">
                                 <a href="javascript:void(0)" onclick="checkOut()">Hoàn Tất Đơn Hàng</a>

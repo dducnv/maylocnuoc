@@ -25,7 +25,7 @@
                 <div class="row">
 
                     <div class="col-lg-8 col-md-12 col-sm-12 col-12">
-                        <form action="#">
+                        <div>
                             <div class="table-content table-responsive cart-table-content">
                                 <table>
                                     <thead class="thead-cart">
@@ -49,10 +49,7 @@
                                             <td class="product-price-cart"><span class="amount">@money($item->product_price)</span>
                                             </td>
                                             <td class="product-quantity pro-details-quality">
-                                                <div class="cart-plus-minus">
-                                                    <input class="cart-plus-minus-box" type="text" name="qtybutton"
-                                                           value="1">
-                                                </div>
+                                                {{$item->cart_qty}}
                                             </td>
                                             <td class="product-subtotal">@money($item->product_price)</td>
                                             <td class="product-remove">
@@ -74,17 +71,17 @@
                                         <div class="cart-shiping-update">
                                             <a href="#">Tiếp Tục Mua Hàng</a>
                                         </div>
-                                        <div class="cart-clear">
+                                        {{-- <div class="cart-clear">
                                             @if($cart != null)
                                                 <button>Cập Nhật Số Lượng</button>
                                                 <a onclick="removeAllCart()" href="javascript:void(0)">Xoá Tất Cả</a>
                                             @endif
 
-                                        </div>
+                                        </div> --}}
                                     </div>
                                 </div>
                             </div>
-                        </form>
+                        </div>
                     </div>
                     <div class="col-lg-4 col-md-12 col-sm-12 col-12">
 
@@ -92,7 +89,7 @@
                             <div class="title-wrap">
                                 <h4 class="cart-bottom-title section-bg-gary-cart">Tổng Tiền</h4>
                             </div>
-                            <h4 class="grand-totall-title mt-20">{{$cart_qty}} Sản Phẩm  <span>@money($grandTotal)</span></h4>
+                            <h4 class="grand-totall-title mt-4">{{$cart_qty}} Sản Phẩm  <span>@money($grandTotal)</span></h4>
                             <a href="{{asset('/thanh-toan')}}">Thanh Toán</a>
                         </div>
                     </div>

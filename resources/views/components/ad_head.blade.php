@@ -16,5 +16,6 @@
 <link type="text/css" href="{{asset('assets/admin/css/admin.css')}}" rel="stylesheet">
 <link type="text/css" href="{{asset('assets/admin/css/style.css')}}" rel="stylesheet">
 <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
+    @cloudinaryJS
     <!-- NOTICE: You can use the _analytics.html partial to include production code specific code & trackers -->
 </head>

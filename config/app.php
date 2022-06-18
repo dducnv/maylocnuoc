@@ -179,6 +179,7 @@ return [
 
         UniSharp\LaravelFilemanager\LaravelFilemanagerServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
+        CloudinaryLabs\CloudinaryLaravel\CloudinaryServiceProvider::class
 
     ],
 
@@ -236,7 +237,7 @@ return [
 
         'Toastr'  => Brian2694\Toastr\Facades\Toastr::class,
         'Image' => Intervention\Image\Facades\Image::class,
-
+        'Cloudinary' => CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary::class
 
     ],
 

@@ -134,7 +134,7 @@
                                                             @enderror
                                                         </div>
                                                         <div class="form-check form-switch mb-3">
-                                                            <input name="status" @if($item->category_ed_status ==0 ) checked @endif  class="form-check-input" type="checkbox" id="category_status">
+                                                            <input name="status" @if($item->category_status == 0 ) checked @endif  class="form-check-input" type="checkbox" id="category_status">
                                                             <label class="form-check-label" for="category_status">{{ __('Hiển Thị') }}</label>
                                                         </div>
                                                     </div>

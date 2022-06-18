@@ -53,7 +53,7 @@ if (!function_exists('showCategoriesHome')) {
             echo $sub ? '' : '<ul  class="dropdown">';
             foreach ($cate_child as $item) {
                  echo '<li class="menu-item-has-children">' .
-                    '<a href="#">'.$item->category_name.'</a>';
+                    '<a href="/muc-luc?cate='.$item->category_slug.'">'.$item->category_name.'</a>';
                 showCategoriesHome($categories, $item->id,false);
                 echo '</li>';
             }
@@ -75,7 +75,7 @@ if (!function_exists('showCategoriesNav')) {
             echo $sub ? '' : '<i class="icon-arrow-right fa "> </i><ul>';
             foreach ($cate_child as $item) {
                 echo ' <li>';
-                echo '<a href="">' . $item->category_name . '</a>';
+                echo '<a href="/muc-luc?cate='.$item->category_slug.'">' . $item->category_name . '</a>';
                 showCategoriesNav($categories, $item->id, false);
                 echo '</li>';
             }

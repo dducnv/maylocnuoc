@@ -9,7 +9,7 @@
     <div class="col-lg-4">
         <div class="card border-0 shadow mb-4">
             <div class="card-body">
-                <form action="{{url('/admin/nhan-hieu/them-nhan-hieu')}}" method="POST">
+                <form action="{{url('/admin/nhan-hieu/them-nhan-hieu')}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="mb-3">
                         <div class="text-center">
@@ -20,13 +20,7 @@
                         </div>
                         <label for="thumbnail">{{__('Chọn Logo')}}</label>
                         <div class="input-group">
-                           <span class="input-group-btn">
-                             <a id="brand-logo" data-input="logo-path" data-preview="logo-preview" class="btn btn-primary  rounded-none">
-                               <i class="fa fa-picture-o"></i> Chọn
-                             </a>
-                           </span>
-                            <input id="logo-path"  class="form-control rounded-start ms-1 @error('brand-logo') is-invalid @enderror" placeholder="{{__('Đường Dẫn...')}}" type="text" name="brand-logo">
-
+                            <input id="logo-path"  class="form-control rounded-start ms-1 @error('brand-logo') is-invalid @enderror" placeholder="{{__('Đường Dẫn...')}}" type="file" name="brand-logo">
                         </div>
                         @error('brand-logo')
                         <div class="invalid-feedback">
